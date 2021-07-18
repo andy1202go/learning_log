@@ -62,7 +62,7 @@ git init project_name
 
 注意：local和global都对当前目录生效的时候，local优先级更高
 
-![WechatIMG5](/Users/liangbo/Desktop/Projects/Git/learning_log/Git_three_piece_suite/imgs/WechatIMG5.jpeg)
+![WechatIMG5](./imgs/WechatIMG5.jpeg)
 
 ### 1.5 工作区和暂存区
 
@@ -82,7 +82,7 @@ git mv old_file new_file
 
 ### 1.9 .git目录
 
-![image-20210718165700421](/Users/liangbo/Library/Application Support/typora-user-images/image-20210718165700421.png)
+![git目录](./imgs/git目录.jpg)
 
 实现本地管理能力
 ls -al
@@ -97,19 +97,19 @@ git的核心对象是commit tree blob
 
 下图展示了HEAD和refs文件夹的关系；HEAD指向refs/head的当前分支/commit（通过类型可以看出是commit类型）
 
-![git目录HEAD探索的副本](/Users/liangbo/Desktop/Projects/Git/learning_log/Git_three_piece_suite/imgs/git目录HEAD探索的副本.jpg)
+![git目录HEAD探索](./imgs/git目录HEAD探索.jpg)
 
 ![refsHead和branch](/Users/liangbo/Desktop/Projects/Git/learning_log/Git_three_piece_suite/imgs/refsHead和branch.jpg)
 
 config文件保存了当前仓库的配置信息
 
-![config](/Users/liangbo/Desktop/Projects/Git/learning_log/Git_three_piece_suite/imgs/config.jpg)
+![config](./imgs/config.jpg)
 
 还有一个很重要的文件夹是objects;
 
 进去看到的object是内部的文件名和外部的短的文件夹名称一起组成的objectName，这点需要注意
 
-![objects](/Users/liangbo/Desktop/Projects/Git/learning_log/Git_three_piece_suite/imgs/objects.jpg)
+![objects](./imgs/objects.jpg)
 
 对于object来说，有commit、tree、blob几种；是git的核心对象
 
@@ -123,7 +123,7 @@ config文件保存了当前仓库的配置信息
 
 commit中存储当前提交的各种信息，数据则存储为一棵树
 
-![commit内容](/Users/liangbo/Desktop/Projects/Git/learning_log/Git_three_piece_suite/imgs/commit内容.jpg)
+![commit内容](./imgs/commit内容.jpg)
 
 树和blob上面聊过了，图示也比较清晰了
 
@@ -174,15 +174,15 @@ Rebase命令，-i表示交互界面，在交互界面可以做许多事情，通
 > 实际实现，从最后git的响应来看，是分离头指针后，执行命令后，重新提交了，blob是没有变化的
 > 对于本地可以这么玩
 
-![rebase-reward](/Users/liangbo/Desktop/Projects/Git/learning_log/Git_three_piece_suite/imgs/rebase-reward.jpg)
+![rebase-reward](./imgs/rebase-reward.jpg)
 
-![rebase过程](/Users/liangbo/Desktop/Projects/Git/learning_log/Git_three_piece_suite/imgs/rebase过程.jpg)
+![rebase过程](./imgs/rebase过程.jpg)
 
 ### 2.17 合并连续commit
 
 还是用rebase，只是这次使用squash命令
 
-![合并commit](/Users/liangbo/Desktop/Projects/Git/learning_log/Git_three_piece_suite/imgs/合并commit.jpg)
+![合并commit](./imgs/合并commit.jpg)
 
 ### 2.18 合并不连续commit
 
