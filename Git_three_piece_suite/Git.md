@@ -194,8 +194,6 @@ Rebase命令，-i表示交互界面，在交互界面可以做许多事情，通
 git diff --cached
 ```
 
-
-
 ## 3 Git与GitHub的简单同步
 
 ### 3.30 注册GitHub账号
@@ -232,6 +230,14 @@ ssh-keygen -t rsa -C "email-address"
 
 ### 3.33 把本地仓库同步到GitHub
 
+git remote -v
+git remote add branch sshURL
+这种情况是属于，本地有建立库和分支啥的
+git pull相当于先做了git fetch然后又做了git merge的
+fast-forward似乎是要有共同的祖先的git branch -av
+recursive strategy
+git push c
+
 ## 4 Git多人单分支集成协作时的常见场景
 
 ### 4.34
@@ -242,7 +248,27 @@ ssh-keygen -t rsa -C "email-address"
 
 ## 6 初识GitHub
 
-### 6.41
+### 6.41 GitHub为什么会火
+
+Git只是解决了开发人员之间的协作的问题，但是对于开源软件，缺少一个分享、传播的平台。
+
+- 托管整个代码的地方
+- 程序员可以协同工作
+- 了解如何充分利用Git
+
+### 6.42 GitHub有哪些核心功能
+
+通过GitHub首页最下面的features介绍（https://github.com/features）可以找到
+
+<img src="./imgs/GitHub核心特性.jpg" alt="GitHub核心特性" style="zoom:100%;" />
+
+- 协作编程——依托于Git，强大
+- 自动化及持续集成和持续部署——有各种第三方能力_marketplace
+- 安全
+- 提供客户端应用程序
+- 项目管理——精简，灵活性高，功能并不完备
+- 团队管理——organization
+- 社区
 
 ## 7 使用GitHub进行团队协作
 
