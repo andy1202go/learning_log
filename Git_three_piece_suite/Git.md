@@ -204,7 +204,76 @@ git diff -- 文件1 文件2 文件3 ...
 
 ### 2.21 如何让暂存区恢复成和HEAD的一样
 
+```
+git reset HEAD
+```
 
+用于暂存区的东西都不想要了，想把这些变更都先回退到工作区的情况下；
+
+理论上，reset命令是比较危险的感觉，因为了解到reset的原理是异动git的HEAD指针，相当于会把commit给删除掉了；
+
+同样的re-操作，还有restore和revert；
+
+restore，在git status等情况下经常被提醒，该命令是“撤销”的含义，就是把文件从缓存区撤销，回到未被追踪的状态（untracked）；https://www.cnblogs.com/teach/p/13997323.html
+
+这里就要提到git文件的几种状态了![img](https://img-blog.csdn.net/20150420162738266?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvZ3NsczE4MTcxMQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center)
+
+https://blog.csdn.net/gsls181711/article/details/45149635
+
+git revert和git reset都是恢复之前版本的方法，只不过原理不同，reset是重新指定HEAD的指向，指向旧的commit，删除一些commit；revert是创建一个新的commit，复制自指定的旧的commit；https://www.jb51.net/article/192271.htm
+
+![img](https://img.jbzj.com/file_images/article/202007/2020073111481798.jpg)
+
+![img](https://img.jbzj.com/file_images/article/202007/20200731114818106.jpg)
+
+### 2.22 工作区恢复为暂存区
+
+```
+git checkout -- <file>...
+```
+
+一个原则是，想动工作区的内容，使用git checkout，动暂存区的，使用git reset；
+
+但这种命令用不好，有可能找不回来文件，导致这些命令有点“危险”
+
+### 2.23 取消部分暂存区文件的更改
+
+```
+git reset HEAD <file>...
+```
+
+### 2.24 消除最近几次提交
+
+不打算这么做...即使是一个人使用的情况下
+
+```
+git reset --hard
+```
+
+慎用，危险！
+
+### 2.25 比较不同提交的异同
+
+```
+git diff commit1 commit2
+git diff temp master
+```
+
+比较分支也是一样的，不同的分支，其实就是头指针指向的commit不同罢了
+
+### 2.26 正确删除文件的方法
+
+```
+git rm
+```
+
+否则使用linux命令rm，git 中还需要使用git rm <file>执行一遍
+
+### 2.27
+
+### 2.28
+
+### 2.29
 
 ## 3 Git与GitHub的简单同步
 
