@@ -9,9 +9,10 @@ as name says
 
 ### Plan
 
-| Date                      | Goals                                                        | Materials | Remark | Achievement  Status |
-| ------------------------- | ------------------------------------------------------------ | --------- | ------ | ------------------- |
-| July 2021 First 2-3 Weeks | - Master the basic and kind-of complex user of Git,Github,Gitlab<br />- Know Git better<br />- 优先解决可能会遇到的团队协作，远程仓库的问题<br />- 优先学习git之后，快速上手Github和Gitlab | infoQ     |        |                     |
-|                           |                                                              |           |        |                     |
-| July 2021 Third Week      | 【探索】IDEA中Git组件的底层，是不是通过git log来的？         |           |        |                     |
+| Date                      | Type   | Goals                                                        | Materials | Remark | Achievement  Status |
+| ------------------------- | ------ | ------------------------------------------------------------ | --------- | ------ | ------------------- |
+| July 2021 First 2-3 Weeks | System | - Master the basic and kind-of complex user of Git,Github,Gitlab<br />- Know Git better<br />- 优先解决可能会遇到的团队协作，远程仓库的问题<br />- 优先学习git之后，快速上手Github和Gitlab | infoQ     |        |                     |
+|                           | Point  | java的动态代理学习                                           |           |        |                     |
+| July 2021 Third Week      |        | 【探索】IDEA中Git组件的底层，是不是通过git log来的？         |           |        |                     |
+|                           | System | maven系统学习                                                |           |        |                     |
 
