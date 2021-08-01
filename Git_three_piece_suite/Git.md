@@ -289,7 +289,13 @@ git stash
 
 ### 2.29 git的备份
 
+说到备份，离不开传输协议；git的备份有智能协议和哑协议之分；
 
+哑协议传输进度不可见，智能协议可见且速度更快；
+
+常用的智能协议是http,https,ssh
+
+Git fetch 下来
 
 ## 3 Git与GitHub的简单同步
 
@@ -337,11 +343,42 @@ git push c
 
 ## 4 Git多人单分支集成协作时的常见场景
 
-### 4.34
+### 4.34 不同的人修改了不同文件如何处理
+
+没有冲突，自己提自己的就好了
+
+所以养成习惯，commit以后，如果想push到远端，先pull下来看看，再合并后进行push
+
+### 4.35 不同人修改了同文件的不同区域如何处理
+
+没有冲突，智能的git会合并这些，自己提自己的即可
+
+### 4.36 不同人修改了同文件的同一区域
+
+有冲突，需要人工解决；
+
+这种情况git不能处理，需要人工介入
+<HEAD到=是远端的，下面的是自己本地的
+
+### 4.37 同时变更了文件名和文件内容如何处理？
+
+智能的git会处理的，不用担心
+
+### 4.38 把同一文件改成了不同的文件名如何处理
+
+人工介入，保留一个删除一个
 
 ## 5 Git集成使用禁忌
 
-### 5.39
+### 5.39 禁止向集成分支执行push -f操作
+
+force
+
+-f 如果本地的分支比较老，强制提交的话，会把很多远端的commit清除掉
+
+### 5.40 禁止向集成分支执行变更历史的操作
+
+就是禁止把远端分支拉到本地后进行rebase
 
 ## 6 初识GitHub
 
@@ -360,28 +397,197 @@ Git只是解决了开发人员之间的协作的问题，但是对于开源软�
 <img src="./imgs/GitHub核心特性.jpg" alt="GitHub核心特性" style="zoom:100%;" />
 
 - 协作编程——依托于Git，强大
+
 - 自动化及持续集成和持续部署——有各种第三方能力_marketplace
+
 - 安全
+
 - 提供客户端应用程序
+
 - 项目管理——精简，灵活性高，功能并不完备
+
 - 团队管理——organization
+
 - 社区
+
+### 6.43 怎么快速找到感兴趣的开源项目
+
+即怎么使用好GitHub的搜索功能；
+
+支持精确搜索；
+
+一方面可以找到advanced search按钮，使用图形界面的高级搜索功能；
+
+另一方面可以在搜索框输入特定，比如
+
+- 多个关键字：git 学习资料 最好；会搜索仓库名，仓库的介绍，仓库的readme文件内容；
+- 在readme中搜索关键字：关键字 in:readme
+- 在readme中搜索关键字，且star数大于10000：git 最好 学习 资料 in:readme stars:>10000
+- 搜索某一特定代码：filename:shithappens；注意搜代码和搜仓库不能并行；
+
+更多使用参考官方文档：https://docs.github.com/en/github/searching-for-information-on-github/searching-on-github/searching-wikis
+
+推荐：
+
+- ruanyf/weekly
+
+### 6.44 怎样在GitHub上搭建个人博客
+
+直接搜索 
+
+```
+blog easily start in:readme stars:>5000
+```
+
+Jekyll 就是第一个了，只需几步完成搭建
+
+1. fork：fork就是远端的clone了，clone到你的那边去
+2. 到你自己的账户中，找到jekyll仓库，进入settings，修改仓库名称为你的博客名称.github.io
+3. 修改_config.yml文件，各种博客相关的配置都在这里；
+4. 进入code，_posts文件夹，上传md文件，注意文件名命名格式规范：2021-07-31-标题.md
+5. 进入设置-pages，进行配置，然后访问链接
+
+额，有点老了，应该是没有更新过了，然后GitHub本身有更新变化，这个不符合GitHub站点发布规则了，整体有问题；
+
+重新尝试之后，找到一个简单的（因为懒得自己去搞了，先搞定使用GitHub提供的静态网站的能力吧）
+
+```
+GitHub hosted blogs in:readme created:>2020
+```
+
+在第2页找到[svelteland/svelte-kit-blog-demo](https://github.com/svelteland/svelte-kit-blog-demo)，点进去看了下，各方面都可用，满足我的要求；
+
+按照之前的经验，fork过去，调整一些东西之后，就可以使用了，docs文件夹放东西即可
+
+
+
+但好像还是有问题，即使是fork过来，page配置之后，都是不行的，算了，还是第一个吧，虽然丑了点，但先能用着再说，反正现在也没写啥东西。
+
+### 6.45 开源项目怎么保证代码质量
+
+指定特定的组或人可以进行代码commit；
+
+其他的可以pull request；
+
+同时辅助以CI，自动化的检查等
+
+### 6.46 为何需要组织类型的仓库
 
 ## 7 使用GitHub进行团队协作
 
-### 7.47
+### 7.47 创建团队的项目
+
+创建repository的时候，选择Owner即可，选择对应的org；
+
+然后再settings中选择team等，赋予权限
+
+### 7.48 怎样选择适合自己团队的工作流
+
+- 主干开发：在一条主干上进行开发；适用于设计和开发能力强的，保证上线后无需修改代码就能够修改系统行为；适用于能力强，人员少，用户升级组件成本低的环境；
+- Git Flow：切换来切换去的，图很复杂的那种；有预定的发布周期，不适合敏捷开发，需要执行严格的发布流程；
+- GitHub Flow：从主干拉特性分支出去开发，开发完合回去；发布集成等较快；
+- Gitlab Flow：master分支和production分支，master持续集成，production上线；也可以增加pre-production分支；
+
+### 7.49 如何挑选合适的分支集成策略
+
+settings中的merge button
+
+![merge button](imgs/merge button.jpeg)
+
+看了下，还是只能commit吧，虽然最后出来的图很奇怪，但是习惯了。可能也是因为工作流的原因；
+
+squash和rebase的类似于主干的感觉，然后大团队强调规范流程，严格执行等
+
+### 7.50 启用issue跟踪需求和任务
+
+GitHub的issue没有用状态图什么的，使用的是label
+
+默认的仓库里面应该是开启的；
+
+create issue，然后基于issue可以进行探讨；
+
+issue本身是开启或关闭的状态；
+
+issue可以被label，标记为各种东西；
+
+也可以为快速的创建对应的issue的模板；
+
+所以，查看其他仓库的时候，可以看下issue多不多，是不是有很多未关闭的啥的，来判定项目的进展情况。
+
+### 7.51 如何用project管理issue
+
+就是使用project功能的看板来管理issue和pull request
+
+在repo的projects创建一个新的即可开始
+
+### 7.52 项目内部怎么做code review
+
+settings-branches 添加protection rule，apply rule to master
+
+所以pull request的**强制**限制，其实就是这里来的
+
+### 7.53 团队协作时如何做多分支的集成
+
+merge比rebase好用，体现在团队协作的时候，会把多个commit合并到master分支去用
+
+主要是实践下，关注冲突的解决
+
+### 7.54 怎么保证集成的质量
+
+使用market的app去控制，比如TravisCI，比如Codecov控制代码覆盖率等等。
+
+还有之前提到的push的强制pull request的控制。
+
+### 7.55 怎样把产品包发布到GitHub上
+
+releases栏目，使用安装的app进行处理
+
+看了下，截止21年，好像已经是action栏目了；
+
+错了，releases还是有的，在侧边栏
+
+### 7.56 给项目增加详细的指导文档
+
+wiki栏目
+
+小技巧，找到自己觉得写得还不错的wiki的仓库，clone到本地，然后push到我们自己的仓库中来，然后就可以基于此进行编辑了
 
 ## 8 Gitlab实践
 
-### 8.57
+### 8.57 gitlab为啥受国内互联网企业欢迎
+
+- 开源，可自行搭建；
+
+- 社区活跃
+- 更新块
+- CI发展快
+
+### 8.58 gitlab的核心功能
+
+全生命周期，devops
+
+### 8.59 gitlab上做项目管理
+
+issues和merge request
+
+### 8.60 gitlab上怎么做code review
+
+类似GitHub；
+
+另外还有gitlab robot可以自动化搞——这个可以尝试下
+
+### 8.61 gitlab上怎么保证集成质量
+
+### 8.62 怎么把应用部署到AWS上面
 
 ## 其他独立问题
 
-1. git命令中，有选项，选项中，什么时候用-，什么时候用--？
-   - 参考知乎问题https://www.zhihu.com/question/41366215
-   - 总结一下
-     - 通常，-简写，--全拼
-     - 风格问题/历史原因，UNIX，GNU等习惯不同而延续下来的
+### 1 git命令中，有选项，选项中，什么时候用-，什么时候用--？
+
+- 参考知乎问题https://www.zhihu.com/question/41366215
+- 总结一下
+  - 通常，-简写，--全拼
+  - 风格问题/历史原因，UNIX，GNU等习惯不同而延续下来的
 
 
 
