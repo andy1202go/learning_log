@@ -7,12 +7,13 @@ as name says
 
 - 查不到的东西，有触类旁通的点，可以成文，将单独成库；
 
-### Plan
+### System Learning Plan
 
-| Date                      | Type   | Goals                                                        | Materials | Remark | Achievement  Status |
-| ------------------------- | ------ | ------------------------------------------------------------ | --------- | ------ | ------------------- |
-| July 2021 First 2-3 Weeks | System | - Master the basic and kind-of complex user of Git,Github,Gitlab<br />- Know Git better<br />- 优先解决可能会遇到的团队协作，远程仓库的问题<br />- 优先学习git之后，快速上手Github和Gitlab | infoQ     |        |                     |
-|                           | Point  | java的动态代理学习                                           |           |        |                     |
-| July 2021 Third Week      |        | 【探索】IDEA中Git组件的底层，是不是通过git log来的？         |           |        |                     |
-|                           | System | maven系统学习                                                |           |        |                     |
+| Date                               | Goals                                                        | Materials                              | Remark | Achievement  Status                                          | TODO                                                         |
+| ---------------------------------- | ------------------------------------------------------------ | -------------------------------------- | ------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| July 2021 First 2-3 Weeks<br />Git | - Master the basic and kind-of complex user of Git,Github,Gitlab<br />- Know Git better<br />- 优先解决可能会遇到的团队协作，远程仓库的问题<br />- 优先学习git之后，快速上手Github和Gitlab | infoQ                                  |        | Done 2021-08-01<br />- 对git的了解加深；<br />对git的使用更加有自信了<br />对GitHub和gitlab有了基础的了解，也是充足的入门级了解了<br />达成了初定的目标 | 整理自己的Git知识图谱<br />整理logs内容，解决其中git相关的问题 |
+| 2021-08 整个月份<br />软件工程     | - 了解什么是软件工程<br />- 对软件的诞生到生命结束有清晰的认知<br />- 能分析软件工程在工作中的体现和影响<br />- 使用软件工程指导工作和学习 | 极客时间<br />推荐的书籍，最经典的一本 |        |                                                              |                                                              |
+|                                    |                                                              |                                        |        |                                                              |                                                              |
+|                                    |                                                              |                                        |        |                                                              |                                                              |
+|                                    |                                                              |                                        |        |                                                              |                                                              |
 
