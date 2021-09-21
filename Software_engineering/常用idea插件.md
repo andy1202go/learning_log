@@ -18,4 +18,6 @@ Maven helper
 
 好像社区版用不了
 
-5 
+### 5 自动注释
+
+easy-javadoc https://developer.aliyun.com/article/753659
