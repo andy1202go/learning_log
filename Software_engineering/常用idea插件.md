@@ -21,3 +21,17 @@ Maven helper
 ### 5 自动注释
 
 easy-javadoc https://developer.aliyun.com/article/753659
+
+### 6  LeetCode Editor
+
+### 7 Rainbow Brackets
+
+### 8 Free Mybatis Plugin
+
+### 9  String Manipulation
+
+### 10 PlantUML
+
+实际上只是plantUML推出的idea中的插件，本身的东西挺amazing的https://plantuml.com/zh/
+
+画用例图、时序图、简单的流程图的首选！！！
