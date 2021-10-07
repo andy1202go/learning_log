@@ -5,12 +5,12 @@ import org.shithappens.libs.TestingSet;
 import java.util.logging.Logger;
 
 /**
- * api测试
+ * java api测试
  *
  * @author liangbo
  * @date 2021/09/21
  */
-public class ApiTest {
+public class JavaApiTest {
 
     static Logger log = Logger.getLogger("ApiTest");
 
