@@ -21,7 +21,7 @@ public class JavaApiTest {
         log.info("lastindexof no " + TestingSet.LONG_STR.lastIndexOf(TestingSet.INDEX_OF_NO_STR));
 
         log.info("targetCount is 0. Get result as " + TestingSet.LONG_STR.indexOf("", 10));
-        log.info("target is null. Get result as " + TestingSet.LONG_STR.indexOf(null, 10));
+//        log.info("target is null. Get result as " + TestingSet.LONG_STR.indexOf(null, 10));
 
     }
 
