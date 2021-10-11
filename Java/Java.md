@@ -1,3 +1,5 @@
+
+
 # Java
 
 [toc]
@@ -112,6 +114,57 @@ lastIndexOf的话
 
 理论部分，可以安排在路上来，不过找资料可以平时找好
 
+##### 11.5.1 java日志体系的历史
+
+大体上参考[理清，五花八门的Java日志](https://mp.weixin.qq.com/s/5IV_i_NHGatdhV_XEfCeAQ)就行；
+
+总结下来是：
+
+- 最开始只有System.out和System.err，会产生大量IO，输出的日志不能保存到文件，只能打印在控制台；无法定制，也无法控制日志是否需要输出；
+- 巨佬Ceki出手，Log4j诞生，但Java的母公司Sun拒绝把Log4j引入Java的标准库中
+- Java推出自己的Java Util Logging，即JUL
+- 为了兼容两种日志标准库，抽象接口，得到JCL，JCL有其默认实现Simple Log，但JCL问题多多
+- 巨佬再出手，Slf4j诞生，随之而来的是Slf4j的默认实现Logback，以及Slf4j和其他各种api或日志标准的桥接包
+- 抄袭的Log4j2诞生，包含log4j-api和log4j-core，而且也有各种桥接包
+- 最终，两点需要知道
+  1. java日志体系分为门面和具体实现
+  2. 分为巨佬的Slf4j-Logback以及Apache两大阵营
+
+文章算是整体梳理了混乱的java日志体系，但其中关于桥接包部分我没有很好的理解（但是最后解决问题的例子还是很好理解的，总之遇到日志问题，可以画图来分析解决），尤其是在https://time.geekbang.org/column/article/220307类似文章中看到的下面这张图，才是各种奇怪
+
+![img](/Users/liangbo/Desktop/Projects/Git/learning_log/Java/imgs/97fcd8b55e5288c0e9954f070f1008fe.png)
+
+从上图看下来，感觉是从api桥接到slf4j再适配具体实现的情况，但实际上，如果你把从上到下的某条线都依赖到项目中的话，有一定几率是会Stack Overflow的；
+
+究其原因，是调用链导致一定概率形成死循环，而如何避免，是要从代码实现角度来的。具体可以参考文章：详解log4j-over-slf4j与slf4j-log4j12共存stack overflow异常分析
+
+而且上文还解答了我对于上面那张图片的疑问，实际上在slf4j[官方文档](http://www.slf4j.org/legacy.html)中，关于桥接，有这么两张图
+
+[![click to enlarge](http://www.slf4j.org/images/concrete-bindings.png)](http://www.slf4j.org/images/concrete-bindings.png)
+
+[![click to enlarge](http://www.slf4j.org/images/legacy.png)](http://www.slf4j.org/images/legacy.png)
+
+里面相似说明了应用调用slf4jAPi适配具体实现的几种情况，和桥接到其他api的情况；
+
+也就是说，之前的一幅图，是两种情况的结合..........
+
+##### 11.5.2 JUL
+
+
+
+##### 11.5.3 Slf4j+Logback的最佳实践（？）
+
+##### 11.5.4 桥接原理
+
+https://blog.csdn.net/jpf254/article/details/80757041这篇文章梳理的比较清晰了
+
+> ## 总结
+>
+> 1. 建议在应用中使用日志门面API打印日志,日后可以通过调整桥接器和日志框架实现方便的修改日志实现
+> 2. slf4j在获取日志框架实现时扫描class path,寻找`org.slf4j.impl.StaticLoggerBinder`,桥接器就是通过提供该类实现桥接功能
+
+- [ ] 结合代码来梳理看下
+
 ## 核心技术卷二
 
 ### 9 安全
@@ -129,18 +182,18 @@ lastIndexOf的话
 | 时间       | 内容                                                   |      |
 | ---------- | ------------------------------------------------------ | ---- |
 | 2021-09-21 | indexOf中，为啥当targetCount为0，返回是fromIndex啊？？ |      |
-|            |                                                        |      |
+| 10-10      | java日志体系，使用了门面设计模式                       |      |
 |            |                                                        |      |
 
 
 
 ## 总结
 
-| 时间 | 内容 |      |
-| ---- | ---- | ---- |
-|      |      |      |
-|      |      |      |
-|      |      |      |
+| 时间 | 内容                                     |      |
+| ---- | ---------------------------------------- | ---- |
+|      | 搞不清楚的东西，要么代码，要么第一手资料 |      |
+|      |                                          |      |
+|      |                                          |      |
 
 
 
