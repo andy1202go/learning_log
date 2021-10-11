@@ -42,3 +42,7 @@ easy-javadoc https://developer.aliyun.com/article/753659
 实际上只是plantUML推出的idea中的插件，本身的东西挺amazing的https://plantuml.com/zh/
 
 画用例图、时序图、简单的流程图的首选！！！
+
+### 11 Code Review Helper
+
+https://github.com/veezean/IntellijIDEA-CodeReview-Plugin
