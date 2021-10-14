@@ -1,0 +1,11 @@
+
+D
+java:S1905"'Remove this unnecessary cast to "List".(Ó´÷Ï8˜å¼Ç/
+Y
+java:S1854"7Remove this useless assignment to local variable "obj".(çğ¡öÿÿÿÿÿ8á˜ä¼Ç/
+J
+java:S1481"(Remove this unused "obj" local variable.(çğ¡öÿÿÿÿÿ8á˜ä¼Ç/
+Z
+java:S1854"=Remove this useless assignment to local variable "listAfter".(Ó´÷Ï8˜å¼Ç/
+K
+java:S1481".Remove this unused "listAfter" local variable.(Ó´÷Ï8˜å¼Ç/
