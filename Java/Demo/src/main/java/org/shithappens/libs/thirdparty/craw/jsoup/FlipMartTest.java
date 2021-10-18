@@ -22,6 +22,7 @@ public class FlipMartTest {
         //https://www.cnblogs.com/youyoui/p/11065923.html
         Document doc = null;
         try {
+            //Flipmart
             doc = Jsoup.connect(URL).get();
         } catch (IOException e) {
             e.printStackTrace();
@@ -30,6 +31,7 @@ public class FlipMartTest {
         DataNode elChild = (DataNode) el.childNode(0);
         String data = elChild.getWholeData();
         String json = data.substring(dd.length(), data.length() - 1);
+        
 
         String title = doc.title();
 

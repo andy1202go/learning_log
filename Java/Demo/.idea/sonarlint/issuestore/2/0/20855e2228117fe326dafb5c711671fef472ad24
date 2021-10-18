@@ -1,0 +1,13 @@
+
+L
+java:S1481$"*Remove this unused "title" local variable.(¢Ò²ùüÿÿÿÿ8çÇÜğÇ/
+p
+java:S3008"NRename this field "URL" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÛıŸÕúÿÿÿÿ8ÁŞğÇ/
+Z
+java:S1854!"8Remove this useless assignment to local variable "json".(ç‘­öüÿÿÿÿ8‹ë‚ñÇ/
+K
+java:S1481!")Remove this unused "json" local variable.(ç‘­öüÿÿÿÿ8‹ë‚ñÇ/
+[
+java:S1854$"9Remove this useless assignment to local variable "title".(¢Ò²ùüÿÿÿÿ8çÇÜğÇ/
+^
+java:S2259"AA "NullPointerException" could be thrown; "doc" is nullable here.(‰¬ê8úçèğÇ/

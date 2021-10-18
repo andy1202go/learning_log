@@ -9,3 +9,9 @@ j
 :src/main/java/org/shithappens/libs/serialization/Test.java,a\8\a8406a1a5a4be69a0f28fd33c2054baa016cadc5
 h
 8src/main/java/org/shithappens/libs/collections/Test.java,e\9\e9fe4def5f9d763814dc3e66c9c65edc9038e561
+x
+Hsrc/main/java/org/shithappens/libs/thirdparty/craw/jsoup/AmazonTest.java,3\4\3437b80819a9d692d49c573a5cec5cfff67d6341
+7
+pom.xml,4\4\442292b8a7efeabbe4cc176709b833b1792140ec
+z
+Jsrc/main/java/org/shithappens/libs/thirdparty/craw/jsoup/FlipMartTest.java,2\0\20855e2228117fe326dafb5c711671fef472ad24
