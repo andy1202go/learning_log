@@ -4,7 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="87e0bdef-f278-462a-a6d9-c98afc749edb" name="Default Changelist" comment="" />
+=======
+    <list default="true" id="87e0bdef-f278-462a-a6d9-c98afc749edb" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/shithappens/libs/thirdparty/craw/jsoup/test.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/shithappens/libs/thirdparty/craw/jsoup/test2.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+<<<<<<< HEAD
+=======
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/shithappens/libs/thirdparty/craw/jsoup/FlipMartTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/shithappens/libs/thirdparty/craw/jsoup/FlipMartTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/generated-sources/annotations/org/shithappens/libs/mapstruct/CarMapperImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/generated-sources/annotations/org/shithappens/libs/mapstruct/CarMapperImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../模板.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../模板.md" afterDir="false" />
+>>>>>>> 61ede5520b8f284400398da1075ca51f781c7db5
+    </list>
+>>>>>>> a52f9c8c411423f01bcdb036bb0bdf521de51c5d
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
