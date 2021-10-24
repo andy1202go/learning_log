@@ -4,57 +4,41 @@
 
 参考以左耳朵的MySQL路线来学习下
 
-## 官方文档
+## 官方文档（8.0版本）
 
-### Functions and Operators
+### 1 General Infomation
 
-#### 12.7 Date and Time Functions
+MySQL的基本情况，历史，特点；8.0版本的新特性
 
-##### now()
+### 2 Installing and Upgrading MySQL
 
-https://dev.mysql.com/doc/refman/5.7/en/date-and-time-functions.html#function_now
+安装和后续的配置；老版本的升级
 
-> Returns the current date and time as a value in `'*`YYYY-MM-DD hh:mm:ss`*'` or *`YYYYMMDDhhmmss`* format, depending on whether the function is used in string or numeric context. The value is expressed in the session time zone.
+### 3 Tutorial
 
-也就是根据类型要求，返回两种不同的格式。
+基本使用教程
 
-遇到过时间字段是bigint的，然后插入的时候是插入的now()，结果就是*`YYYYMMDDhhmmss`* 的样子。
+### 4 MySQL Programs
 
-后续的说明主要是和函数 [`SYSDATE()`](https://dev.mysql.com/doc/refman/5.7/en/date-and-time-functions.html#function_sysdate)的差异点比较，主要有两点
+MySQL的一些程序，比如mysqld；环境参数等
 
-1. NOW()返回的是一个常量，是声明开始执行时间点的；sysdate()返回的是准确的时间点的时间；for example
+### 5 MySQL Server Administration
 
-   ```mysql
-   mysql> SELECT NOW(), SLEEP(2), NOW();
-   +---------------------+----------+---------------------+
-   | NOW()               | SLEEP(2) | NOW()               |
-   +---------------------+----------+---------------------+
-   | 2006-04-12 13:47:36 |        0 | 2006-04-12 13:47:36 |
-   +---------------------+----------+---------------------+
-   
-   mysql> SELECT SYSDATE(), SLEEP(2), SYSDATE();
-   +---------------------+----------+---------------------+
-   | SYSDATE()           | SLEEP(2) | SYSDATE()           |
-   +---------------------+----------+---------------------+
-   | 2006-04-12 13:47:44 |        0 | 2006-04-12 13:47:46 |
-   +---------------------+----------+---------------------+
-   ```
+MySQL服务器管理
 
-2. set timestamp会改变now()的值，不会影响sysdate()；设为0后会恢复
+### 6 Security
 
-## 安装
+安全：常规，权限控制，加密连接，插件，企业级
 
-### Linux
+### 7 Backup and Recovery
 
+### 8 Optimization
 
+优化sql表达式，索引，数据库结构，InnoDB表，执行计划，性能衡量
 
+#### 8.0 案例
 
-
-## SQL调优
-
-### 案例
-
-#### 1 order by [date] desc
+##### 1 order by [date] desc
 
 - 描述
   - order by的条件是单独索引，且是时间类型的，区分度最大
@@ -93,7 +77,7 @@ https://dev.mysql.com/doc/refman/5.7/en/date-and-time-functions.html#function_no
 - explain中rows和实际的差距？
 
   - 官方说了，这个是tm的估计值，是MySQL认为一定会检查的行数https://dev.mysql.com/doc/refman/5.7/en/explain-output.html#explain_rows
-  
+
 - 初始情况为啥那么慢？？
 
   其实应该分成几个子问题
@@ -120,9 +104,113 @@ https://dev.mysql.com/doc/refman/5.7/en/date-and-time-functions.html#function_no
   - 索引对order by 的优化
   - rows的估算
 
-## 小疑问
+后续发现使用id不是最好的方案，因为某些情况下，优化器认为id的区分度最大，然后还是全表扫描；
 
-### 1 USING BTREE 的索引是b树还是b+树
+不如用left(date_time)的方式来，一方面保证了业务的正确性，一方面避免了走date_time索引全表扫描
+
+### 9 Language Structure
+
+语言结构（？）
+
+### 10 Character Sets，Collations，Unicode
+
+字符集相关
+
+### 11 Data Types
+
+数据类型
+
+### 12 Functions and Operators
+
+#### 12.7 Date and Time Functions
+
+##### now()
+
+https://dev.mysql.com/doc/refman/5.7/en/date-and-time-functions.html#function_now
+
+> Returns the current date and time as a value in `'*`YYYY-MM-DD hh:mm:ss`*'` or *`YYYYMMDDhhmmss`* format, depending on whether the function is used in string or numeric context. The value is expressed in the session time zone.
+
+也就是根据类型要求，返回两种不同的格式。
+
+遇到过时间字段是bigint的，然后插入的时候是插入的now()，结果就是*`YYYYMMDDhhmmss`* 的样子。
+
+后续的说明主要是和函数 [`SYSDATE()`](https://dev.mysql.com/doc/refman/5.7/en/date-and-time-functions.html#function_sysdate)的差异点比较，主要有两点
+
+1. NOW()返回的是一个常量，是声明开始执行时间点的；sysdate()返回的是准确的时间点的时间；for example
+
+   ```mysql
+   mysql> SELECT NOW(), SLEEP(2), NOW();
+   +---------------------+----------+---------------------+
+   | NOW()               | SLEEP(2) | NOW()               |
+   +---------------------+----------+---------------------+
+   | 2006-04-12 13:47:36 |        0 | 2006-04-12 13:47:36 |
+   +---------------------+----------+---------------------+
+   
+   mysql> SELECT SYSDATE(), SLEEP(2), SYSDATE();
+   +---------------------+----------+---------------------+
+   | SYSDATE()           | SLEEP(2) | SYSDATE()           |
+   +---------------------+----------+---------------------+
+   | 2006-04-12 13:47:44 |        0 | 2006-04-12 13:47:46 |
+   +---------------------+----------+---------------------+
+   ```
+
+2. set timestamp会改变now()的值，不会影响sysdate()；设为0后会恢复
+
+### 13 SQL Statements
+
+表达式
+
+### 14 MySQL Data Dictionary
+
+### 15 The InnoDB Storage Engine
+
+InnoDB存储引擎相关
+
+### 16 Alternative Storage Engines
+
+其他存储引擎
+
+### 17 Replication
+
+复制
+
+### 18 Group Replication
+
+### 19 MySQL Shell
+
+### 20 Using MySQL as a Document Store
+
+文件存储
+
+### 21 InnoDB Cluster
+
+### 22 InnoDB ReplicaSet
+
+### 23 MySQL NDB Cluster 8.0
+
+### 24 Partitioning
+
+分片
+
+### 25 Stored Objects
+
+### 26 INFOMATION_SCHEMA Tables
+
+### 27 MySQL Performance Schema
+
+### 28 MySQL sys schema
+
+### 29 Connectors and APIs
+
+### 30 MySQL Enterprise Edition
+
+### 31 MySQL Workbench
+
+### 32 MySQL on the OCI Marketplace
+
+### FAQ
+
+#### 1 USING BTREE 的索引是b树还是b+树
 
 b+树；
 
@@ -134,9 +222,7 @@ https://dev.mysql.com/doc/refman/5.7/en/create-index.html#create-index-options
 
 官方说明中，索引类型就是叫BTREE，所以只能说底层是B+（引擎版本有关？）
 
-
-
-
+### Error Messages and Common Problems
 
 ## 参考文献
 
@@ -146,11 +232,11 @@ https://dev.mysql.com/doc/refman/5.7/en/create-index.html#create-index-options
 
 ## TODO List
 
-| 时间 | 内容 |      |
-| ---- | ---- | ---- |
-|      |      |      |
-|      |      |      |
-|      |      |      |
+| 时间    | 内容                    |              |
+| ------- | ----------------------- | ------------ |
+| 2021-10 | Mac安装MySQL            | 重要但不紧急 |
+| 2021-10 | Linux安装MySQL          | 不重要不紧急 |
+| 2021-10 | logs的MySQL问题开始处理 | 不重要但紧急 |
 
 
 
