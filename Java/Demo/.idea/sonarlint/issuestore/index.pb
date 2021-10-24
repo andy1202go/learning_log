@@ -15,3 +15,7 @@ Hsrc/main/java/org/shithappens/libs/thirdparty/craw/jsoup/AmazonTest.java,3\4\3
 pom.xml,4\4\442292b8a7efeabbe4cc176709b833b1792140ec
 z
 Jsrc/main/java/org/shithappens/libs/thirdparty/craw/jsoup/FlipMartTest.java,2\0\20855e2228117fe326dafb5c711671fef472ad24
+r
+Bsrc/main/java/org/shithappens/libs/thirdparty/craw/jsoup/test.json,1\a\1af51aed141f4e6b49ee369b8ccda6897c720c3e
+s
+Csrc/main/java/org/shithappens/libs/thirdparty/craw/jsoup/test2.json,2\9\29b18f1ed7f9d275a9f28b8e85569f504fe45810
