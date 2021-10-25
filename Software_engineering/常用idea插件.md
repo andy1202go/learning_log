@@ -1,28 +1,30 @@
-# 常用idea插件
+# IDEA常用配置
 
 [toc]
 
-### 1 阿里代码规范
+## 1 常用插件
+
+### 1.1 阿里代码规范
 
 Alibaba Java Coding Guidelines plugin support.
 
-### 2 Maven管理
+### 1.2 Maven管理
 
 Maven helper
 
-### 3 code glance
+### 1.3 code glance
 
 代码浏览
 
-### 4 lombok
+### 1.4 lombok
 
 好像社区版用不了
 
-### 5 自动注释
+### 1.5 自动注释
 
 easy-javadoc https://developer.aliyun.com/article/753659
 
-### 6  LeetCode Editor
+### 1.6  LeetCode Editor
 
 参考：https://www.yzlfxy.com/jiaocheng/java/366790.html
 
@@ -31,18 +33,26 @@ easy-javadoc https://developer.aliyun.com/article/753659
 - 选择题目作答
 - 右键LeetCode部分进行run或submit等
 
-### 7 Rainbow Brackets
+### 1.7 Rainbow Brackets
 
-### 8 Free Mybatis Plugin
+### 1.8 Free Mybatis Plugin
 
-### 9  String Manipulation
+### 1.9  String Manipulation
 
-### 10 PlantUML
+### 1.10 PlantUML
 
 实际上只是plantUML推出的idea中的插件，本身的东西挺amazing的https://plantuml.com/zh/
 
 画用例图、时序图、简单的流程图的首选！！！
 
-### 11 Code Review Helper
+### 1.11 Code Review Helper
 
 https://github.com/veezean/IntellijIDEA-CodeReview-Plugin
+
+## 2 常用配置
+
+### 2.1 Terminal中空格间距过大的问题
+
+一方面在font相关的地方选用Show only monospaced font；https://blog.csdn.net/qq_38366946/article/details/88977211
+
+一方面在Editor-->Color Scheme-->Console Font中调整terminal情况
