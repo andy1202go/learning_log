@@ -6,6 +6,10 @@
 
 ## 官方文档（8.0版本）
 
+### 0 Data Prepare
+
+https://dev.mysql.com/doc/employee/en/employees-installation.html
+
 ### 1 General Infomation
 
 MySQL的基本情况，历史，特点；8.0版本的新特性
