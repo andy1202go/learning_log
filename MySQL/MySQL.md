@@ -18,6 +18,14 @@ MySQL的基本情况，历史，特点；8.0版本的新特性
 
 安装和后续的配置；老版本的升级
 
+#### 2.4 Installing MySQL on macOS
+
+- check系统版本
+- 下载社区版本https://dev.mysql.com/downloads/mysql/
+- 安装数据库
+  - root/hellow0rld
+- 在系统偏好配置中，双击MySQL图标，然后启动数据库，并勾选随机启动
+
 ### 3 Tutorial
 
 基本使用教程
@@ -210,6 +218,8 @@ InnoDB存储引擎相关
 
 ### 31 MySQL Workbench
 
+https://dev.mysql.com/downloads/workbench/
+
 ### 32 MySQL on the OCI Marketplace
 
 ### FAQ
@@ -228,6 +238,24 @@ https://dev.mysql.com/doc/refman/5.7/en/create-index.html#create-index-options
 
 ### Error Messages and Common Problems
 
+## 深入浅出MySQL（第2版）
+
+### 第一部分 基础篇
+
+### 第1章 MySQL的安装与配置
+
+书里只介绍了Windows和Linux两种安装；我们找找Mac的
+
+[2.4 Installing MySQL on macOS](####2.4 Installing MySQL on macOS)
+
+然后再下载workbench来获取一个图形化操作页面
+
+[31 MySQL Workbench](###31 MySQL Workbench)
+
+### 第2章 SQL基础
+
+
+
 ## 参考文献
 
 1 
@@ -236,11 +264,12 @@ https://dev.mysql.com/doc/refman/5.7/en/create-index.html#create-index-options
 
 ## TODO List
 
-| 时间    | 内容                    |              |
-| ------- | ----------------------- | ------------ |
-| 2021-10 | Mac安装MySQL            | 重要但不紧急 |
-| 2021-10 | Linux安装MySQL          | 不重要不紧急 |
-| 2021-10 | logs的MySQL问题开始处理 | 不重要但紧急 |
+| 时间    | 内容                                |              |
+| ------- | ----------------------------------- | ------------ |
+| 2021-10 | Mac安装MySQL                        | 重要但不紧急 |
+| 2021-10 | Linux安装MySQL                      | 不重要不紧急 |
+| 2021-10 | logs的MySQL问题开始处理             | 不重要但紧急 |
+| 2021-11 | 官方文档和深入浅出MySQL一起结合着看 |              |
 
 
 
