@@ -1,4 +1,4 @@
-# IDEA常用配置
+# IDEA常用内容
 
 [toc]
 
@@ -56,3 +56,17 @@ https://github.com/veezean/IntellijIDEA-CodeReview-Plugin
 一方面在font相关的地方选用Show only monospaced font；https://blog.csdn.net/qq_38366946/article/details/88977211
 
 一方面在Editor-->Color Scheme-->Console Font中调整terminal情况
+
+## 3 常用工具
+
+### 3.1 使用diagram浏览代码结构
+
+以facade或controller为入口，一点点加入class，形成完备的diagram；
+
+https://www.jianshu.com/p/e7fdb2fa3f08
+
+基于图，了解接口的功能和调用链路；
+
+同时还能跳转到代码上去（双击后从某个地方jump to source）。沉淀为文档；
+
+关于几种图形的layout，目前使用分层的要多一些。定义和适用场景参考https://yed.yworks.com/support/manual/layout_orthogonal_compact.html

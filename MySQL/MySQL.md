@@ -14,6 +14,26 @@ https://dev.mysql.com/doc/employee/en/employees-installation.html
 
 MySQL的基本情况，历史，特点；8.0版本的新特性
 
+#### 1.0 官方定位
+
+- vary fast
+- 多线程
+- 多用户
+- 鲁棒
+
+一些特点
+
+- GNU license
+- 双重许可，可以根据GNU的条款用作开源产品，也可以从Oracle购买商业许可
+
+#### 1.1 About This Manual
+
+针对8.0版本，不兼容之前的。
+
+不提供sql指导或关系数据库概念。
+
+各种文档获取方式，以及最新文档地址等。
+
 ### 2 Installing and Upgrading MySQL
 
 安装和后续的配置；老版本的升级
@@ -246,11 +266,27 @@ https://dev.mysql.com/doc/refman/5.7/en/create-index.html#create-index-options
 
 书里只介绍了Windows和Linux两种安装；我们找找Mac的
 
+#### mac安装
+
 [2.4 Installing MySQL on macOS](####2.4 Installing MySQL on macOS)
 
 然后再下载workbench来获取一个图形化操作页面
 
 [31 MySQL Workbench](###31 MySQL Workbench)
+
+然后准备数据，以mysql官网提供的employee数据来导入先，参考
+
+[0 Data Prepare](###0 Data Prepare)
+
+#### 导入数据
+
+1. 通过0下载文件到本地；
+2. 打开benchmark，导入数据；
+3. 出错，通过https://blog.csdn.net/qq_39812545/article/details/79934262修改绝对路径；
+4. 再次尝试，完成导入；
+5. ![image-20211129230636313](./资料/imgs/image-20211129230636313.png)
+
+
 
 ### 第2章 SQL基础
 
