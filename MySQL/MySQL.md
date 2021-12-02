@@ -290,6 +290,69 @@ https://dev.mysql.com/doc/refman/5.7/en/create-index.html#create-index-options
 
 ### 第2章 SQL基础
 
+目的：标准SQL的使用方法，以及一些拓展SQL的使用方法。
+
+#### 2.1 历史及标准化
+
+- 是使用关系模型的数据库应用语言
+- ANSI标准，1970年代至今
+
+#### 2.2 (My)SQL使用入门
+
+(My)SQL这种命名，是为了介绍标准SQL之后，再介绍下MySQL对其的拓展。
+
+##### 2.2.1 SQL分类
+
+三类SQL语句
+
+- DDL：Data Definition Languages，数据定义语言；定义各种数据库对象
+  - 定义数据段，数据库，表，列，索引
+  - 常用语句：create,drop,alter,rename
+- DML：Data Manipulation Languages，数据操纵语言，操作数据库记录
+  - 增删改查
+  - 常用语句：insert,delete,update,select
+- DCL：Data Control Languages，数据控制语言，控制数据段的访问和许可
+  - 定义数据库、表、字段、用户的访问权限和安全级别
+  - 常用语句：grant,revoke
+
+##### 2.2.2 DDL语句
+
+1. 创建数据库：create database dbname
+2. 执行结果：3部分解读，Query OK, 1row affected (0.01 sec)
+3. 删除数据库：drop database dbname；注意：**所有drop语句操作的结果都是显示“0 rows affected”**
+4. 创建表：
+
+```sql
+CREATE TABLE tablename(
+column_name_1 column_type_1 constrains,
+  ...
+ column_name_n column_type_n constrains
+)
+```
+
+5. 查看表的定义
+
+```sql
+DESC tablename;
+show create table tablename \G;
+```
+
+6. 删除表：drop table tablename
+7. 修改表
+
+```sql
+---修改表字段
+ALTER TABLE tablename MODIFY [COLUMN] column_definition [FIRST|AFTER col_name]; 
+---增加表字段
+ALTER TABLE tablename ADD [COLUMN] column_definition [FIRST|AFTER col_name]; 
+---删除表字段
+ALTER TABLE tablename DROP [COLUMN] col_name; 
+---字段改名 
+ALTER TABLE tablename CHANGE [COLUMN] old_col_name new_column_definition;
+---表改名
+ALTER TABLE tablename RENAME [TO] new_tablename;
+```
+
 
 
 ## 参考文献
