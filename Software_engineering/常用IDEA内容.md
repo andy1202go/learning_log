@@ -49,6 +49,14 @@ easy-javadoc https://developer.aliyun.com/article/753659
 
 https://github.com/veezean/IntellijIDEA-CodeReview-Plugin
 
+### 1.12 SequenceDiagram
+
+快速生成时序图的插件
+
+https://blog.csdn.net/u013978512/article/details/109112391?utm_medium=distribute.pc_aggpage_search_result.none-task-blog-2~aggregatepage~first_rank_ecpm_v1~rank_v31_ecpm-2-109112391.pc_agg_new_rank&utm_term=idea%E8%B0%83%E7%94%A8%E9%93%BE%E8%B7%AF&spm=1000.2123.3001.4430
+
+默认的，可以通过Call Hierarchy看到方法的调用链的树状描述，但遗憾的是没有图
+
 ## 2 常用配置
 
 ### 2.1 Terminal中空格间距过大的问题
