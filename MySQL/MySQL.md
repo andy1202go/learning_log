@@ -192,6 +192,27 @@ https://dev.mysql.com/doc/refman/5.7/en/date-and-time-functions.html#function_no
 
 表达式
 
+###### 13.7.5.36 SHOW TABLE STATUS Statement
+
+```sql
+SHOW TABLE STATUS
+[{FROM | IN} db_name]
+[LIKE 'pattern' | WHERE expr]
+```
+
+table信息，尤其是看数据大小等、行数据大小
+
+- [ ] 补充截图
+
+部分字段说明：
+
+- Rows：行数，Innodb不准确，甚至只是40-50%的样子，用count自己去查
+- Data_length：Innodb下，是近似估计的已分配的空间大小。bytes。
+
+猜测Innodb不准的原因，是Innodb存储的page导致的。
+
+虽然是近似值，但也是可以做参考的。
+
 ### 14 MySQL Data Dictionary
 
 ### 15 The InnoDB Storage Engine
@@ -227,6 +248,12 @@ InnoDB存储引擎相关
 ### 25 Stored Objects
 
 ### 26 INFOMATION_SCHEMA Tables
+
+#### 26.3 General Table Information
+
+##### 26.3.25 The INFORMATION_SCHEMA TABLES Table
+
+见[13.7.5.36 SHOW TABLE STATUS Statement](######13.7.5.36 SHOW TABLE STATUS Statement)
 
 ### 27 MySQL Performance Schema
 
