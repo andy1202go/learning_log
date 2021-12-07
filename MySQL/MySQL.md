@@ -380,6 +380,46 @@ ALTER TABLE tablename CHANGE [COLUMN] old_col_name new_column_definition;
 ALTER TABLE tablename RENAME [TO] new_tablename;
 ```
 
+##### 2.2.3 DML语句
+
+对数据库中，表记录的操作，增删改查
+
+###### 2.2.3.1 插入记录
+
+```sql
+INSERT INTO tablename(field1,field2...) VALUES(value1,value2...)
+```
+
+其中field是字段名，value是对应的值；
+
+两个特殊规则
+
+1. 可以只有value没有field，但顺序要和表的一致，且要全部字段对应的值都有
+
+```sql
+--官方数据集
+insert into employees.departments values('d100','Test D');
+
+--错误示范 Error Code: 1136. Column count doesn't match value count at row 1
+insert into employees.departments values('Test D');
+```
+
+2. 可以指定部分field插入数据，未指定的字段要求必须是以下的一种或几种
+   - 可空字段
+   - 非空但有默认值的
+   - 自增字段
+
+还有一个很好的特性是，可以批量插入数据，节省大量网络开销
+
+```sql
+INSERT INTO tablename(field1,field2...)
+VALUES
+(record1_value1,record1_value2...),
+(record2_value1,record2_value2...),
+...
+(recordn_value1,recordn_value2...);
+```
+
 
 
 ## 参考文献
