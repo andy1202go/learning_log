@@ -332,10 +332,10 @@ https://dev.mysql.com/doc/refman/5.7/en/create-index.html#create-index-options
 
 三类SQL语句
 
-- DDL：Data Definition Languages，数据定义语言；定义各种数据库对象
+- DDL：Data **Definition** Languages，数据定义语言；定义各种数据库对象
   - 定义数据段，数据库，表，列，索引
   - 常用语句：create,drop,alter,rename
-- DML：Data Manipulation Languages，数据操纵语言，操作数据库记录
+- DML：Data **Manipulation** Languages，数据操纵语言，操作数据库记录
   - 增删改查
   - 常用语句：insert,delete,update,select
 - DCL：Data Control Languages，数据控制语言，控制数据段的访问和许可
@@ -418,6 +418,81 @@ VALUES
 (record2_value1,record2_value2...),
 ...
 (recordn_value1,recordn_value2...);
+```
+
+###### 2.2.3.2 更新记录
+
+```sql
+UPDATE tablename SET field1=value1,field2=value2... [WHERE CONDITION]
+```
+
+更屌的是，可以同时更新多个表中数据
+
+```sql
+UPDATE t1,t2... SET t1.field1=expr1,tn.fieldn=exprn...[WHERE CONDITION]
+```
+
+据说，是多用于
+
+> 根据一个表的字段来动态的更新另一个表的字段
+
+- [ ] 找一个实际的update多个表的case
+
+###### 2.2.3.3 删除记录
+
+和更新类似，也是基本的单表删除和多表删除
+
+```sql
+DELETE FROM tablename [WHERE CONDITION]
+
+DELETE t1,t2,t3... FROM t1,t2,t3... [WHERE CONDITION] 
+```
+
+只是需要牢记，不加WHERE条件的话，会全量删除，GG
+
+###### 2.2.3.4 查询记录
+
+查询乃重中之重，但直接上代码和注释更直观，只是浏览的话，建议先看注释，想一想应该是什么，再去看命令语法
+
+```sql
+--全量查询
+SELECT * FROM tablename [WHERE CONDITION]
+
+--查询不重复
+SELECT DISTINCT field1 FROM tablename [WHERE CONDITION]
+
+--条件查询
+--CONDITION部分，可以有各种比较运算符，也可以有逻辑运算符如and or
+
+--排序和限制
+SELECT * FROM tablename [WHERE CONDITION] [ORDER BY field1 [DESC/ASC], field2 [DESC/ASC]...] [LIMIT offset_start, row_count]
+--默认是ASC
+--多个字段排序，是按照先后顺序去排的，每个字段都可以拥有不同的排序顺序；若只有一个字段进行排序，遇到相同的记录，相同的记录将会无序排列
+--如果只希望展示特定的部分的数据，可以使用limit
+--offset_statr是偏移量，row_count是行数
+--注意：limit是MySQL拓展SQL的语法，其他数据库可能不适用
+
+--聚合
+SELECT [field1,field2...] fun_name
+FROM tablename
+[WHERE CONDITION]
+[GROUP BY field1,field2... [WITH ROLLUP]]
+[HAVING HAVING_CONDITION]
+--其中fun_name是要做的聚合操作，也就是聚合函数，常用的有sum,max,min,count
+--with rollup是对分类聚合之后的结果再汇总
+--比如说
+SELECT dept_no,count(1) 
+from employees.dept_emp 
+group by dept_no with rollup;
+--统计各部门员工总数，并汇总员工总数，结果如图
+
+```
+
+![image-20211208230058834](./资料/imgs/image-20211208230058834.png)
+
+```sql
+--HAVING关键字表示对分类后的结果再进行条件的过滤；
+--having和where的区别在于，聚合前还是聚合后的过滤；尽量使用where，提高聚合的效率
 ```
 
 
