@@ -493,6 +493,13 @@ group by dept_no with rollup;
 ```sql
 --HAVING关键字表示对分类后的结果再进行条件的过滤；
 --having和where的区别在于，聚合前还是聚合后的过滤；尽量使用where，提高聚合的效率
+
+--表连接
+--大类上分为内连接和外连接；内连接仅选出两张表中互相匹配的记录，外连接会选出其他不匹配的记录
+--外连接又细分为左连接和右连接；左或者右表示，选出左或者右表中不匹配的记录
+select emp.emp_no,emp.dept_no from employees.dept_emp emp left join employees.departments dep on emp.dept_no = dep.dept_no;
+
+select emp.emp_no,emp.dept_no from employees.dept_emp emp join employees.departments dep on emp.dept_no = dep.dept_no;
 ```
 
 
