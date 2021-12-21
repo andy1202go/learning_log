@@ -500,6 +500,18 @@ group by dept_no with rollup;
 select emp.emp_no,emp.dept_no from employees.dept_emp emp left join employees.departments dep on emp.dept_no = dep.dept_no;
 
 select emp.emp_no,emp.dept_no from employees.dept_emp emp join employees.departments dep on emp.dept_no = dep.dept_no;
+
+--子查询
+select emp.emp_no from employees.employees emp where emp.emp_no in (select emp_no from employees.dept_emp)
+--用于子查询的关键字主要包括in,not in,exists,not exists,=,!=
+--在某些情况下，子查询可以转化为表连接，主要是两个方面的考虑：MySQL4.1之前不支持子查询，表连接在很多情况的性能是优于子查询的
+
+--记录联合
+--用于将两个表的数据按照一定条件查询之后，将结果合并显示的场景
+select dept_no from employees.departments
+union all
+select dept_no from employees.dept_emp;
+--union all是结果直接合并展示，union是去重之后的展示
 ```
 
 
