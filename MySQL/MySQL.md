@@ -148,6 +148,41 @@ MySQL服务器管理
 
 字符集相关
 
+#### 10.1 Character Sets and Collations in General
+
+使用一个例子，A,B,a,b的编码和比较，来通俗的解释了什么是字符集，什么是Collation；
+
+> Suppose that we have an alphabet with four letters: A, B, a, b. We give each letter a number: A = 0, B = 1,
+> a = 2, b = 3. The letter A is a symbol, the number 0 is the encoding for A, and the combination of all four
+> letters and their encodings is a character set.
+> Suppose that we want to compare two string values, A and B. The simplest way to do this is to look at the
+> encodings: 0 for A and 1 for B. Because 0 is less than 1, we say A is less than B. What we've just done is
+> apply a collation to our character set. The collation is a set of rules (only one rule in this case): “compare
+> the encodings.” We call this simplest of all possible collations a binary collation.
+
+总结MySQL的字符集有几个特点：
+
+- 可以用不同字符集存储字符串
+- 用不同的规则集来比较字符串
+- 在同一个服务器，同一个数据库，甚至是同一个表，都可以有不同的字符集设定
+- 在任何级别启用字符集和排序规则的规范。
+
+#### 10.2 Character Sets and Collations in MySQL
+
+讲述了关于字符集和排序规则，在MySQL中的情况；
+
+通过show character set [like ''];查看字符集；
+
+通过SHOW COLLATION WHERE Charset = 'utf8mb4';查看排列规则；
+
+- 每种字符集有默认的collation；
+- 不同的字符集，不可能有相同的collation
+- collation的命名有规则，一般是以对应的character set开头，然后跟1个或多个collation特性的描述，比如utf8mb4_general_ci
+
+##### 10.2.1 Character Set Repertoire
+
+##### 10.2.2 UTF-8 for Metadata
+
 ### 11 Data Types
 
 数据类型
@@ -188,9 +223,75 @@ https://dev.mysql.com/doc/refman/5.7/en/date-and-time-functions.html#function_no
 
 2. set timestamp会改变now()的值，不会影响sysdate()；设为0后会恢复
 
+#### 12.8 String Functions and Operators
+
+##### 12.8.1 String Comparison Functions and Operators
+
+暂时仅关注其中对反斜线转义的描述：
+
+> Note
+> MySQL uses C escape syntax in strings (for example, \n to represent the
+> newline character). If you want a LIKE string to contain a literal \, you must
+> double it. (Unless the NO_BACKSLASH_ESCAPES SQL mode is enabled, in which
+> case no escape character is used.) For example, to search for \n, specify it as
+> \\\n. To search for \, specify it as \\\\\\\; this is because the backslashes are
+> stripped once by the parser and again when the pattern match is made, leaving a
+> single backslash to be matched against.
+
 ### 13 SQL Statements
 
 表达式
+
+#### 13.6 Compound Statement Syntax
+
+##### 13.6.5 Flow Control Statements
+
+###### 13.6.5.1 CASE Statement
+
+case表达式，属于混合表达式-流程控制表达式分类；
+
+有两种语法：
+
+```sql
+CASE case_value
+WHEN when_value THEN statement_list
+[WHEN when_value THEN statement_list] ...
+[ELSE statement_list]
+END CASE
+Or:
+CASE
+WHEN search_condition THEN statement_list
+[WHEN search_condition THEN statement_list] ...
+[ELSE statement_list]
+END CASE
+```
+
+第二种用过，比如update的时候给不同的where值设定不同的value；
+
+第一种，是拿case的字段值和when值做比较，直观没想到使用场景；
+
+举个例子如下
+
+```sql
+SELECT
+    NAME '英雄',
+    CASE NAME
+        WHEN '德莱文' THEN
+            '斧子'
+        WHEN '德玛西亚-盖伦' THEN
+            '大宝剑'
+        WHEN '暗夜猎手-VN' THEN
+            '弩'
+        ELSE
+            '无'
+    END '装备'
+FROM
+    user_info;
+```
+
+
+
+##### 13.6.7 Condition Handling
 
 ###### 13.7.5.36 SHOW TABLE STATUS Statement
 
@@ -212,6 +313,60 @@ table信息，尤其是看数据大小等、行数据大小
 猜测Innodb不准的原因，是Innodb存储的page导致的。
 
 虽然是近似值，但也是可以做参考的。
+
+#### 13.8 Utility Statements
+
+效用表达式（？），DESCRIPTION,EXPLAIN,HELP,USE
+
+##### 13.8.1 DESCRIBE Statement
+
+是explain的同义词；
+
+##### 13.8.2 EXPLAIN Statement
+
+explain更多用于查看执行计划(that is, an explanation of how MySQL would execute a query).
+
+desc是其他的，比如desc table_name
+
+语法如下：
+
+```sql
+{EXPLAIN | DESCRIBE | DESC}
+tbl_name [col_name | wild]
+{EXPLAIN | DESCRIBE | DESC}
+[explain_type]
+{explainable_stmt | FOR CONNECTION connection_id}
+{EXPLAIN | DESCRIBE | DESC} ANALYZE [FORMAT = TREE] select_statement
+explain_type: {
+FORMAT = format_name
+}
+format_name: {
+TRADITIONAL
+| JSON
+| TREE
+}
+explainable_stmt: {
+SELECT statement
+| TABLE statement
+| DELETE statement
+| INSERT statement
+| REPLACE statement
+| UPDATE statement
+}
+```
+
+###### Obtaining Table Structure Information
+
+```sql
+desc table_name;
+```
+
+###### Obtaining Execution Plan Information
+
+explain
+
+- 支持SELECT, DELETE, INSERT, REPLACE, and UPDATE语句，后续也会支持table语句
+- TODO
 
 ### 14 MySQL Data Dictionary
 
@@ -438,6 +593,45 @@ UPDATE t1,t2... SET t1.field1=expr1,tn.fieldn=exprn...[WHERE CONDITION]
 
 - [ ] 找一个实际的update多个表的case
 
+一条SQL语句更新一张表的多个字段：
+
+```sql
+update table_name
+set column_name =
+case
+when "a" then "aa"
+when "b" then "bb"
+end,
+column_name2 = 
+when "a" then "a1"
+when "b" then "b2"
+end
+where column_name3 in ("a","b");
+```
+
+通用语法，according to official doc
+
+```sql
+--Single-table syntax:
+UPDATE [LOW_PRIORITY] [IGNORE] table_reference
+SET assignment_list
+[WHERE where_condition]
+[ORDER BY ...]
+[LIMIT row_count]
+value:
+{expr | DEFAULT}
+assignment:
+col_name = value
+assignment_list:
+assignment [, assignment] ...
+--Multiple-table syntax:
+UPDATE [LOW_PRIORITY] [IGNORE] table_references
+SET assignment_list
+[WHERE where_condition]
+```
+
+
+
 ###### 2.2.3.3 删除记录
 
 和更新类似，也是基本的单表删除和多表删除
@@ -513,6 +707,36 @@ union all
 select dept_no from employees.dept_emp;
 --union all是结果直接合并展示，union是去重之后的展示
 ```
+
+
+
+## 遇到的问题些
+
+### 1 插入表情时候java报错，SQLException，咋处理？
+
+直接反应是去改对应表的字符集，utf8为utf8mb4；
+
+alter table table_name character set 'utf8mb4';
+
+然后验证发现失败...
+
+疑惑了很久，使用了以下几种方式
+
+- show variables like '%char%'查看当前数据库的字符设置，然后发现character_set_client和character_set_connection是utf8；怀疑这里有问题，尝试通过set names utf8mb4来改，发现不允许这个修改；
+- 尝试调整java中jdbc的配置来，尝试后失败
+
+经过咨询，通过show create table table_name ，发现每一字段都有Character set utf8描述，然后表的描述是character set utf8mb4；所以，应该是建表的时候，不只是指定了整张表的字符集，也指定了每一字段的字符集；
+
+把字段的字符集调整后，问题得以解决；
+
+alter table table_name change column_name column_name varchar(100) character set utf8mb4 collate utf8mb4_general_ci
+
+根本原因是对mysql的字符集这块不熟悉，其实官方文档在字符集这块第一部分就描述了“在任何级别启用字符集和排序规则的规范。”[character general](####10.1 Character Sets and Collations in General)
+
+### 2  MySQL 的转义
+
+反斜线，MySQL uses C escape syntax in strings (for example, \n to represent the
+newline character).
 
 
 

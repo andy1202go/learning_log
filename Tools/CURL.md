@@ -18,7 +18,9 @@ curl --header "Content-Type:applicaiton/json" www.baidu.com
 curl --user name:password www.baidu.com
 ```
 
+### 一次curl，多个URL
 
+空格隔开就行；jianshu.com/p/fc0eb6c60816
 
 ## 参考文献
 
