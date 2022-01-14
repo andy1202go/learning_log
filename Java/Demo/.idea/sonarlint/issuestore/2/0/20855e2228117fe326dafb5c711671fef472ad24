@@ -1,16 +1,16 @@
 
-[
-java:S1854/"9Remove this useless assignment to local variable "title".(¢Ò²ùüÿÿÿÿ8ÌÒçÉ/
-b
-java:S3252$"EUse static access with "com.alibaba.fastjson.JSON" for "parseObject".(¹¾ª8şŞŠæÉ/
-W
-java:S1854&"5Remove this useless assignment to local variable "o".(ğÈª¯ıÿÿÿÿ8äì¦èÉ/
+]	java:S125*"<This block of commented-out lines of code should be removed.(µÌ©ªûÿÿÿÿ8õØ§èÉ/
 p
 java:S3008"NRename this field "URL" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÿœå´şÿÿÿÿ8ÁŞğÇ/
+W
+java:S1854&"5Remove this useless assignment to local variable "o".(ğÈª¯ıÿÿÿÿ8äì¦èÉ/
 ^
 java:S2259 "AA "NullPointerException" could be thrown; "doc" is nullable here.(‰¬ê8úçèğÇ/
-]	java:S125*"<This block of commented-out lines of code should be removed.(µÌ©ªûÿÿÿÿ8õØ§èÉ/
+b
+java:S3252$"EUse static access with "com.alibaba.fastjson.JSON" for "parseObject".(¹¾ª8şŞŠæÉ/
 L
 java:S1481/"*Remove this unused "title" local variable.(¢Ò²ùüÿÿÿÿ8ÌÒçÉ/
 H
 java:S1481&"&Remove this unused "o" local variable.(ğÈª¯ıÿÿÿÿ8£×©èÉ/
+[
+java:S1854/"9Remove this useless assignment to local variable "title".(¢Ò²ùüÿÿÿÿ8ÌÒçÉ/
