@@ -11,4 +11,8 @@ public class TestingSet {
     public static final String INDEX_OF_YES_STR = LONG_STR.substring(4,10);
     public static final String INDEX_OF_NO_STR = "fuck";
 
+    public static final String FILE_NAME= "test.file.mp4";
+    public static final String FILE_NAME2= "testfilemp4";
+
+
 }

@@ -1,28 +1,28 @@
 
-Y	java:S125ˆ"<This block of commented-out lines of code should be removed.(æòİÕ8Ä²¿•È/
-N
-java:S1481ı"+Remove this unused "review" local variable.(‰²Úúÿÿÿÿ8–â¥•È/
-K
-java:S1481"-Remove this unused "nextUrl2" local variable.(ó¬Œö8®„–È/
-p
-java:S3008"NRename this field "URL" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(›ªÒúúÿÿÿÿ8‚æ‘È/
-\
-java:S1854”"9Remove this useless assignment to local variable "title".(¢Ò²ùüÿÿÿÿ8‹’ıŒÈ/
-L
-java:S1481€")Remove this unused "star" local variable.(÷èòûÿÿÿÿ8‘á…•È/
-]
-java:S1854ı":Remove this useless assignment to local variable "review".(‰²Úúÿÿÿÿ8–â¥•È/
-d
-java:S2259÷"AA "NullPointerException" could be thrown; "doc" is nullable here.(¼Û¤ÿÿÿÿÿ8Ï¿…È/
-B
-java:S1068"&Remove this unused "dd" private field.(±¬é8ĞÜ¹È/
-[
-java:S1854€"8Remove this useless assignment to local variable "star".(÷èòûÿÿÿÿ8‘á…•È/
-\
-java:S1854">Remove this useless assignment to local variable "elements22".(Ùª¢8Ñ­ƒ–È/
-Z
-java:S1854"<Remove this useless assignment to local variable "nextUrl2".(ó¬Œö8®„–È/
 M
 java:S1481”"*Remove this unused "title" local variable.(¢Ò²ùüÿÿÿÿ8‹’ıŒÈ/
+]
+java:S1854ı":Remove this useless assignment to local variable "review".(‰²Úúÿÿÿÿ8–â¥•È/
+Z
+java:S1854"<Remove this useless assignment to local variable "nextUrl2".(ó¬Œö8®„–È/
+\
+java:S1854”"9Remove this useless assignment to local variable "title".(¢Ò²ùüÿÿÿÿ8‹’ıŒÈ/
+p
+java:S3008"NRename this field "URL" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(›ªÒúúÿÿÿÿ8‚æ‘È/
+Y	java:S125ˆ"<This block of commented-out lines of code should be removed.(æòİÕ8Ä²¿•È/
 M
 java:S1481"/Remove this unused "elements22" local variable.(Ùª¢8Ñ­ƒ–È/
+K
+java:S1481"-Remove this unused "nextUrl2" local variable.(ó¬Œö8®„–È/
+N
+java:S1481ı"+Remove this unused "review" local variable.(‰²Úúÿÿÿÿ8–â¥•È/
+B
+java:S1068"&Remove this unused "dd" private field.(±¬é8ĞÜ¹È/
+\
+java:S1854">Remove this useless assignment to local variable "elements22".(Ùª¢8Ñ­ƒ–È/
+d
+java:S2259÷"AA "NullPointerException" could be thrown; "doc" is nullable here.(¼Û¤ÿÿÿÿÿ8Ï¿…È/
+L
+java:S1481€")Remove this unused "star" local variable.(÷èòûÿÿÿÿ8‘á…•È/
+[
+java:S1854€"8Remove this useless assignment to local variable "star".(÷èòûÿÿÿÿ8‘á…•È/

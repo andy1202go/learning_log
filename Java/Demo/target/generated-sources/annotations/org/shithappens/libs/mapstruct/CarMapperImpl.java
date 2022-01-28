@@ -6,7 +6,7 @@ import org.shithappens.libs.mapstruct.entities.CarDTO;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2022-01-12T17:42:30+0800",
+    date = "2022-01-28T11:46:48+0800",
     comments = "version: 1.4.2.Final, compiler: javac, environment: Java 1.8.0_281 (Oracle Corporation)"
 )
 public class CarMapperImpl implements CarMapper {

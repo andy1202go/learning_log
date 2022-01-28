@@ -1,12 +1,25 @@
 
+l
+java:S1192"JDefine a constant instead of duplicating this literal "fileName=" 3 times.(÷ƒ÷Äûÿÿÿÿ8ÊÜ¨©ç/
 w
-java:S2629"\Invoke method(s) only conditionally. Use the built-in formatting to construct this argument.(²£¦Èøÿÿÿÿ
-q
-java:S2629"\Invoke method(s) only conditionally. Use the built-in formatting to construct this argument.(°ðšg
+java:S2629%"\Invoke method(s) only conditionally. Use the built-in formatting to construct this argument.(²£¦Èøÿÿÿÿ
+x
+java:S2629'"\Invoke method(s) only conditionally. Use the built-in formatting to construct this argument.(°ðšg8ÊÜ¨©ç/
+~
+java:S2629"\Invoke method(s) only conditionally. Use the built-in formatting to construct this argument.(÷ƒ÷Äûÿÿÿÿ8ÊÜ¨©ç/
+y
+java:S2629"\Invoke method(s) only conditionally. Use the built-in formatting to construct this argument.(„ùçë8ÊÜ¨©ç/
+y
+java:S2629$"\Invoke method(s) only conditionally. Use the built-in formatting to construct this argument.(Ò‘’ª8ÊÜ¨©ç/
+X	java:S125("<This block of commented-out lines of code should be removed.(¿–¤¦8ÊÜ¨©ç/
+~
+java:S2629"\Invoke method(s) only conditionally. Use the built-in formatting to construct this argument.(ˆÓ™èûÿÿÿÿ8ÊÜ¨©ç/
+]	java:S125"<This block of commented-out lines of code should be removed.(‘ûò•ÿÿÿÿÿ8ÊÜ¨©ç/
 w
-java:S2629"\Invoke method(s) only conditionally. Use the built-in formatting to construct this argument.(’¼ÝÚÿÿÿÿÿ
+java:S2629#"\Invoke method(s) only conditionally. Use the built-in formatting to construct this argument.(ÌÖÙ’ûÿÿÿÿ
 w
-java:S2629"\Invoke method(s) only conditionally. Use the built-in formatting to construct this argument.(ÌÖÙ’ûÿÿÿÿ
-Q	java:S125"<This block of commented-out lines of code should be removed.(¿–¤¦
-r
-java:S2629"\Invoke method(s) only conditionally. Use the built-in formatting to construct this argument.(Ò‘’ª
+java:S2629""\Invoke method(s) only conditionally. Use the built-in formatting to construct this argument.(’¼ÝÚÿÿÿÿÿ
+X
+java:S1854"6Remove this useless assignment to local variable "sc".(õ§€‡øÿÿÿÿ8ó´±öé/
+I
+java:S1481"'Remove this unused "sc" local variable.(õ§€‡øÿÿÿÿ8ó´±öé/

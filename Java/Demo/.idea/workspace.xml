@@ -2,14 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6172b00e-3a9d-4d4b-abef-cf2b958230de" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/shithappens/libs/regex/TestMain.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/shithappens/libs/tools/jodd/JoddTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/2/0/20855e2228117fe326dafb5c711671fef472ad24" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/2/0/20855e2228117fe326dafb5c711671fef472ad24" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/4/3437b80819a9d692d49c573a5cec5cfff67d6341" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/4/3437b80819a9d692d49c573a5cec5cfff67d6341" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/3/63591a3915c95529c0c6c9212a1c8f0a365afc94" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/3/63591a3915c95529c0c6c9212a1c8f0a365afc94" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/a/da3d3a8e36af09118c6ebd2439ccd9844fc05425" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/a/da3d3a8e36af09118c6ebd2439ccd9844fc05425" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/0/e01b0d4f8724907af08821156fe519c7723c029e" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/0/e01b0d4f8724907af08821156fe519c7723c029e" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/9/e9fe4def5f9d763814dc3e66c9c65edc9038e561" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/9/e9fe4def5f9d763814dc3e66c9c65edc9038e561" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/shithappens/libs/TestingSet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/shithappens/libs/TestingSet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/shithappens/libs/string/JavaApiTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/shithappens/libs/string/JavaApiTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/generated-sources/annotations/org/shithappens/libs/mapstruct/CarMapperImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/generated-sources/annotations/org/shithappens/libs/mapstruct/CarMapperImpl.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -27,17 +31,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/shithappens/libs/TestingSet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="9" column="31" selection-start-line="9" selection-start-column="31" selection-end-line="9" selection-end-column="31" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/shithappens/libs/thirdparty/craw/jsoup/AmazonTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="200">
-              <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+            <state relative-caret-position="280">
+              <caret line="14" column="41" selection-start-line="14" selection-start-column="31" selection-end-line="14" selection-end-column="41" />
             </state>
           </provider>
         </entry>
@@ -54,24 +49,20 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/shithappens/libs/collections/Test.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
+            <state relative-caret-position="160">
               <caret line="13" column="44" selection-start-line="13" selection-start-column="4" selection-end-line="13" selection-end-column="44" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#610#611#0" expanded="true" />
-                <element signature="e#656#657#0" expanded="true" />
-                <element signature="e#838#839#0" expanded="true" />
-                <element signature="e#883#884#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/shithappens/libs/regex/TestMain.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="380">
-              <caret line="98" column="7" selection-start-line="98" selection-start-column="7" selection-end-line="98" selection-end-column="7" />
+            <state relative-caret-position="220">
+              <caret line="18" column="26" selection-start-line="18" selection-start-column="26" selection-end-line="18" selection-end-column="26" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="docComment;field#NUM_PATTERN#0;class#TestMain#0" />
@@ -83,8 +74,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="200">
-              <caret line="17" column="7" selection-start-line="17" selection-start-column="7" selection-end-line="17" selection-end-column="7" />
+            <state relative-caret-position="540">
+              <caret line="27" column="7" selection-start-line="27" selection-start-column="7" selection-end-line="27" selection-end-column="7" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar://C:/Program Files/Java/jdk1.8.0_281/src.zip!/java/lang/String.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="37900">
+              <caret line="1966" column="18" selection-start-line="1966" selection-start-column="18" selection-end-line="1966" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -98,11 +98,33 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/shithappens/libs/string/JavaApiTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="440">
-              <caret line="24" selection-start-line="24" selection-end-line="24" />
+            <state relative-caret-position="300">
+              <caret line="18" column="48" selection-start-line="18" selection-start-column="48" selection-end-line="18" selection-end-column="48" />
+              <folding>
+                <element signature="e#1740#1741#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pom.xml">
+          <provider editor-type-id="MavenHelperPluginDependencyAnalyzer" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="240">
+              <caret line="66" column="50" selection-start-line="66" selection-start-column="50" selection-end-line="66" selection-end-column="50" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/shithappens/libs/tools/jodd/JoddTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="280">
+              <caret line="18" selection-start-line="18" selection-end-line="18" />
             </state>
           </provider>
         </entry>
@@ -116,23 +138,38 @@
       </list>
     </option>
   </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>subst</find>
+    </findStrings>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/org/shithappens/libs/string/JavaApiTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/shithappens/libs/collections/Test.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/shithappens/libs/regex/TestMain.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/shithappens/libs/TestingSet.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/shithappens/libs/tools/jodd/JoddTest.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/org/shithappens/libs/string/JavaApiTest.java" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="-7" />
-    <option name="y" value="40" />
-    <option name="width" value="1288" />
-    <option name="height" value="687" />
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-8" />
+    <option name="y" value="32" />
+    <option name="width" value="1936" />
+    <option name="height" value="1056" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -140,6 +177,7 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -180,13 +218,12 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="libs" type="462c0819:PsiDirectoryNode" />
-              <item name="collections" type="462c0819:PsiDirectoryNode" />
+              <item name="string" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -206,7 +243,20 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.TestMain">
+  <component name="RunManager" selected="Application.JavaApiTest">
+    <configuration name="JavaApiTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.shithappens.libs.string.JavaApiTest" />
+      <module name="Demo" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.shithappens.libs.string.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.shithappens.libs.collections.Test" />
       <module name="Demo" />
@@ -235,6 +285,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.JavaApiTest" />
         <item itemvalue="Application.TestMain" />
         <item itemvalue="Application.Test" />
       </list>
@@ -252,17 +303,19 @@
       <updated>1641980243524</updated>
       <workItem from="1641980245480" duration="446000" />
       <workItem from="1642045607891" duration="2451000" />
+      <workItem from="1642576495318" duration="100000" />
+      <workItem from="1642576773274" duration="856000" />
+      <workItem from="1642643189713" duration="2715000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2897000" />
+    <option name="totallyTimeSpent" value="6568000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="32" width="1936" height="1056" extended-state="7" />
-    <editor active="true" />
+    <frame x="-8" y="32" width="1936" height="1056" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16693333" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16906667" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -272,7 +325,7 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.329718" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3991323" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -304,6 +357,18 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/shithappens/libs/string/JavaApiTest.java</url>
+          <line>25</line>
+          <properties />
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/main/java/org/shithappens/libs/thirdparty/craw/jsoup/AmazonTest.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -319,6 +384,41 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/shithappens/libs/collections/Test.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="13" column="44" selection-start-line="13" selection-start-column="4" selection-end-line="13" selection-end-column="44" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/shithappens/libs/regex/TestMain.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="18" column="26" selection-start-line="18" selection-start-column="26" selection-end-line="18" selection-end-column="26" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="docComment;field#NUM_PATTERN#0;class#TestMain#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="27" column="7" selection-start-line="27" selection-start-column="7" selection-end-line="27" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_281/src.zip!/java/lang/String.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="37900">
+          <caret line="1966" column="18" selection-start-line="1966" selection-start-column="18" selection-end-line="1966" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/shithappens/libs/mapstruct/DemoMain.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="140">
@@ -326,48 +426,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/shithappens/libs/string/JavaApiTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="24" selection-start-line="24" selection-end-line="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="17" column="7" selection-start-line="17" selection-start-column="7" selection-end-line="17" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/shithappens/libs/collections/Test.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="13" column="44" selection-start-line="13" selection-start-column="4" selection-end-line="13" selection-end-column="44" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#610#611#0" expanded="true" />
-            <element signature="e#656#657#0" expanded="true" />
-            <element signature="e#838#839#0" expanded="true" />
-            <element signature="e#883#884#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/shithappens/libs/TestingSet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="9" column="31" selection-start-line="9" selection-start-column="31" selection-end-line="9" selection-end-column="31" />
+        <state relative-caret-position="280">
+          <caret line="14" column="41" selection-start-line="14" selection-start-column="31" selection-end-line="14" selection-end-column="41" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/shithappens/libs/regex/TestMain.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/shithappens/libs/tools/jodd/JoddTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="98" column="7" selection-start-line="98" selection-start-column="7" selection-end-line="98" selection-end-column="7" />
+        <state relative-caret-position="280">
+          <caret line="18" selection-start-line="18" selection-end-line="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider editor-type-id="MavenHelperPluginDependencyAnalyzer" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="66" column="50" selection-start-line="66" selection-start-column="50" selection-end-line="66" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/shithappens/libs/string/JavaApiTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="18" column="48" selection-start-line="18" selection-start-column="48" selection-end-line="18" selection-end-column="48" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="docComment;field#NUM_PATTERN#0;class#TestMain#0" />
+            <element signature="e#1740#1741#0" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -15,6 +15,7 @@
         <jsoup.version>1.11.3</jsoup.version>
         <jackson.version>2.9.8</jackson.version>
         <fastjson.version>1.2.70</fastjson.version>
+        <jodd.version>RELEASE</jodd.version>
     </properties>
 
     <dependencyManagement>
@@ -56,6 +57,16 @@
                 <artifactId>fastjson</artifactId>
                 <version>${fastjson.version}</version>
             </dependency>
+            <dependency>
+                <groupId>org.jodd</groupId>
+                <artifactId>jodd-core</artifactId>
+                <version>${jodd.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.jodd</groupId>
+                <artifactId>jodd-util</artifactId>
+                <version>${jodd.version}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
@@ -87,6 +98,14 @@
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>fastjson</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.jodd</groupId>
+            <artifactId>jodd-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.jodd</groupId>
+            <artifactId>jodd-util</artifactId>
         </dependency>
     </dependencies>
     <build>
