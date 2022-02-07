@@ -56,6 +56,22 @@ H<sub>2</sub>O  CO<sub>2</sub>
 H<sub>2</sub>O  CO<sub>2</sub>
 爆米<sup>TM</sup>
 
+### 3 插件相关
+
+#### 3.1 Mermaid绘制流程图、甘特图等
+
+https://mermaid-js.github.io/mermaid/#/
+
+Typora默认支持，基础用法是
+
+```markdown
+​```mermaid
+
+​```
+```
+
+
+
 ## 参考文献
 
 1 
