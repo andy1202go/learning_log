@@ -12,6 +12,26 @@
 
 ### 3 Java的基本程序设计结构
 
+### 3.4　变量与常量 
+
+#### 3.4.4　枚举类型
+
+枚举类型，Enum抽象类的方法，是适用于enum关键字的类上面的。
+
+比如：name()
+
+> - #### name
+>
+>   ```
+>   public final String name()
+>   ```
+>
+>   返回此枚举常量的名称，与其枚举声明中声明的完全相同。 **大多数程序员应该使用[`toString()`](https://www.matools.com/file/manual/jdk_api_1.8_google/java/lang/Enum.html#toString--)方法，因为toString方法可能会返回一个更加用户友好的名称。** 该方法主要用于专门的情况，其中正确性取决于获得确切的名称，这从发布到发布不会有所不同。
+>
+>   - **结果**
+>
+>     这个枚举常数的名称
+
 #### 3.6 字符串
 
 ##### 3.6.7 字符串API
@@ -179,11 +199,11 @@ https://blog.csdn.net/jpf254/article/details/80757041这篇文章梳理的比较
 
 ## TODO List
 
-| 时间       | 内容                                                   |      |
-| ---------- | ------------------------------------------------------ | ---- |
-| 2021-09-21 | indexOf中，为啥当targetCount为0，返回是fromIndex啊？？ |      |
-| 10-10      | java日志体系，使用了门面设计模式                       |      |
-|            |                                                        |      |
+| 时间       | 内容                                                         |      |
+| ---------- | ------------------------------------------------------------ | ---- |
+| 2021-09-21 | indexOf中，为啥当targetCount为0，返回是fromIndex啊？？       |      |
+| 10-10      | java日志体系，使用了门面设计模式                             |      |
+| 2022-02-14 | 把java的api找到搞下来，https://pan.baidu.com/disk/main?from=homeSave#/index?category=all&path=%2F |      |
 
 
 

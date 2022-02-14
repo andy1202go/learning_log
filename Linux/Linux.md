@@ -4,6 +4,22 @@
 
 ## 第四部分 Linux使用者管理
 
+### 第7章　Linux文件与目录管理
+
+#### 7.5　命令与文件的查询
+
+##### 7.5.2　文件名的查找
+
+find的使用：https://www.runoob.com/linux/linux-comm-find.html
+
+目前使用过的是
+
+```shell
+find . -name "fileName"
+```
+
+
+
 ### 16 例行性工作
 
 分为一次性和重复性工作；
