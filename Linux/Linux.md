@@ -18,6 +18,95 @@ find的使用：https://www.runoob.com/linux/linux-comm-find.html
 find . -name "fileName"
 ```
 
+- find不是常用的，因为速度慢...
+- 通常使用的是whereis或者locate
+- 原因是find是直接查找硬盘，而另外两个是查找数据库的
+- 这个数据库是Linux系统，会将系统内的所有文件都记录在一个数据库文件中，而当使用whereis或者locate，会以此数据库文件的内容为准
+
+```shell
+whereis [-bmsu] 文件或目录名
+
+locate [-ir] keyword
+```
+
+其中whereis要求的是文件或目录名，而locate只是关键字；locate要更简单些；
+
+whereis的选项我是不想记住的...
+
+locate的-i表示忽略大小写，-r表示-regex，后面是正则表达式；
+
+**注意** locate有其局限性，也就是依赖数据库文件；而数据库文件默认是每天更新一次。可以通过命令更新数据库
+
+```shell
+updatedb
+```
+
+- 关于find命令
+
+```shell
+find [path] [option] [action]
+```
+
+find的特殊之处在于真的很强大，通过示例来理解：
+
+1. 将过去系统上面24小时内有改动的文件列出
+
+```shell
+find / -mtime 0
+```
+
+这里，path是/，-mtime 0是option的内容
+
+2. 寻找/etc下面的文件，如果文件日期比/etc/passwd新就列出
+
+```shell
+find /etc -newer /etc/passwd
+```
+
+3. 查找/home下面属于vbird的文件
+
+```shell
+find /home -user vbird
+```
+
+4. 查找系统中不属于任何人的文件
+
+```shell
+find / -nouser
+```
+
+5. 找出文件名为passwd的文件
+
+```shell
+find / -name passwd
+```
+
+6. 找出/var目录下，文件类型为Socket的文件名
+
+```shell
+find /var -type s
+```
+
+7. 找出特定属性的文件
+
+```shell
+find / -perm +7000
+```
+
+8. 将7中找到的文件列出
+
+   用到了action
+
+```shell
+find / -perm +7000 ls -l {} \;
+```
+
+9. 找出系统中大于1MB的文件
+
+```shell
+find / -size +1000k
+```
+
 
 
 ### 16 例行性工作
