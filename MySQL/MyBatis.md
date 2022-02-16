@@ -2,13 +2,51 @@
 
 [toc]
 
-参考官方文档：https://mybatis.org/mybatis-3/sqlmap-xml.html
+## 参考官方文档
 
-## Mapper XML Files
+https://mybatis.org/mybatis-3/zh/index.html
 
-### Result Maps
+### XML映射文件
 
-#### construct
+#### insert, update 和 delete
+
+
+
+插入的时候，主键的生成，可以使用useGeneratedKeys；
+
+但是：
+
+> 对于不支持自动生成主键列的数据库和可能不支持自动生成主键的 JDBC 驱动，MyBatis 有另外一种方法来生成主键。
+>
+> 这里有一个简单（也很傻）的示例，它可以生成一个随机 ID（不建议实际使用，这里只是为了展示 MyBatis 处理问题的灵活性和宽容度）：
+>
+> ```xml
+> <insert id="insertAuthor">
+>   <selectKey keyProperty="id" resultType="int" order="BEFORE">
+>     select CAST(RANDOM()*1000000 as INTEGER) a from SYSIBM.SYSDUMMY1
+>   </selectKey>
+>   insert into Author
+>     (id, username, password, email,bio, favourite_section)
+>   values
+>     (#{id}, #{username}, #{password}, #{email}, #{bio}, #{favouriteSection,jdbcType=VARCHAR})
+> </insert>
+> ```
+>
+> 在上面的示例中，首先会运行 selectKey 元素中的语句，并设置 Author 的 id，然后才会调用插入语句。这样就实现了数据库自动生成主键类似的行为，同时保持了 Java 代码的简洁。
+
+在实际使用中，碰到过
+
+```sql
+select @@identity
+```
+
+得到上一次插入记录时自动产生的ID
+
+> 一般系统定义的全局变量都是以*@@*开头，用户自定义变量以@开头
+
+#### 结果映射
+
+##### construct
 
 对于比较复杂的resultMap，可以通过元素<constructor>来表示result的构造器结构；
 
@@ -28,11 +66,29 @@ Error querying database. Cause: java.lang.IndexOutOfBoundsException: Index: 3, S
 
 参考：https://blog.csdn.net/qaqpbp/article/details/115324998
 
+### 动态SQL
+
+##### if
+
+这里遇到的一个问题是，有些同学写的条件非常的简略，不是很好理解；
+
+比如说
+
+```xml
+<if test="hasName != null and  hasName ">
+```
+
+这里，hasName是Boolean类型，所以直接使用在表达式中。
+
+延伸一下，mybatis的解析，据了解是OGNL表达式，某种功能强大的表达式语言，可以了解下。或深入了解mybatis源码，看是如何解析if的。
+
+延伸第二下，if和test标签是规范在dtd文件的，这个也可以了解下。
 
 
 
+## 参考mybatis-spring
 
-
+http://mybatis.org/spring/zh/index.html
 
 
 
@@ -66,11 +122,11 @@ Error querying database. Cause: java.lang.IndexOutOfBoundsException: Index: 3, S
 
 ## TODO List
 
-| 时间 | 内容 |      |
-| ---- | ---- | ---- |
-|      |      |      |
-|      |      |      |
-|      |      |      |
+| 时间    | 内容     |                                   |
+| ------- | -------- | --------------------------------- |
+| 2022-02 | dtd文件  |                                   |
+|         | OGNL语言 | 这两个都单独稿文件出来看下，other |
+|         |          |                                   |
 
 
 
