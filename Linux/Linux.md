@@ -2,6 +2,27 @@
 
 [toc]
 
+## Linux实验环境安装
+
+个人情况
+
+- Mac Mini
+- 无合适旧电脑
+
+### 方案1 买旧电脑安装
+
+Thinkpadx200，买来安装，终端shell连起的，但是旧电脑不好用，风扇扛不住；更换也麻烦，放弃；
+
+### 方案2 虚拟机
+
+m1芯片不支持免费的VirtualBox，其他好的似乎都收费；
+
+另辟蹊径，选择multipass试试；
+
+先装brew...https://blog.csdn.net/txl910514/article/details/105880125
+
+
+
 ## 第四部分 Linux使用者管理
 
 ### 第7章　Linux文件与目录管理

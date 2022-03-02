@@ -242,6 +242,55 @@ https://dev.mysql.com/doc/refman/5.7/en/date-and-time-functions.html#function_no
 
 表达式
 
+#### 13.2 Data Manipulation Statements
+
+##### 13.2.6 INSERT Statement
+
+###### 13.2.6.2 INSERT ... ON DUPLICATE KEY UPDATE Statement
+
+on duplicate key update是个固定用法的东西；针对插入时，主键或者唯一键值重复的情况，执行update内容
+
+> If you specify an ON DUPLICATE KEY UPDATE clause and a row to be inserted would cause a duplicate value in a UNIQUE index or PRIMARY KEY, an UPDATE of the old row occurs.
+
+以下语句功能一致
+
+```mysql
+INSERT INTO t1 (a,b,c) VALUES (1,2,3) ON DUPLICATE KEY UPDATE c=c+1;
+
+UPDATE t1 SET c=c+1 WHERE a=1;
+```
+
+需要注意的是，不要对有可能插入语句的多个key对应的主键或唯一键值重复的情况
+
+> If column b is also unique, the INSERT is equivalent to this UPDATE statement instead:
+>
+> UPDATE t1 SET c=c+1 WHERE a=1 OR b=2 LIMIT 1;
+>
+> If a=1 OR b=2 matches several rows, only one row is updated. In general, you should try to avoid using an ON DUPLICATE KEY UPDATE clause on tables with multiple unique indexes.
+
+另外可以比较动态的使用更新能力，比如希望重复的时候，更新c为a字段和b字段之和的情况
+
+```mysql
+INSERT INTO t1 (a,b,c) VALUES (1,2,3),(4,5,6)
+ON DUPLICATE KEY UPDATE c=VALUES(a)+VALUES(b);
+```
+
+8.0.20版本之后不建议这么使用，换为alias方式调用
+
+```mysql
+INSERT INTO t1 (a,b,c) VALUES (1,2,3),(4,5,6) AS new
+ON DUPLICATE KEY UPDATE c = new.a+new.b;
+
+INSERT INTO t1 (a,b,c) VALUES (1,2,3),(4,5,6) AS new(m,n,p)
+ON DUPLICATE KEY UPDATE c = m+n;
+```
+
+
+
+
+
+更复杂的用法是insert的内容是通过select语句找到的内容，这个后续再研究。
+
 #### 13.6 Compound Statement Syntax
 
 ##### 13.6.5 Flow Control Statements
