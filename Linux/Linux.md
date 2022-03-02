@@ -107,7 +107,11 @@ find / -perm +7000 ls -l {} \;
 find / -size +1000k
 ```
 
+### 第9章 vim程式编辑器
 
+从vim的设计思路得到兴趣的，即正交的概念+vim命令的设计思路（动词+介词+名词），以实现文本编辑器的目标：高效！
+
+https://018ae9c4.wiz06.com/wapp/pages/view/share/s/01yKD40CqAYD2aipXS2bJuyl1x2lIH1FVkdY2mgZ8f2Hi-fl
 
 ### 16 例行性工作
 
