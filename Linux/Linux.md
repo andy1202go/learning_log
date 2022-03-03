@@ -21,7 +21,7 @@ m1芯片不支持免费的VirtualBox，其他好的似乎都收费；
 
 先装brew...https://blog.csdn.net/txl910514/article/details/105880125
 
-
+额，其实也可以不装的。参考官网https://multipass.run/ 和经验https://zhuanlan.zhihu.com/p/374002069，装一个试试
 
 ## 第四部分 Linux使用者管理
 

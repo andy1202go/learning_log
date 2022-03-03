@@ -25,3 +25,9 @@ f
 6src/main/java/org/shithappens/libs/regex/TestMain.java,6\3\63591a3915c95529c0c6c9212a1c8f0a365afc94
 k
 ;src/main/java/org/shithappens/libs/tools/jodd/JoddTest.java,d\3\d3114399956b3dde0aaac632d0ed6557c699a0d8
+|
+Lsrc/main/java/org/shithappens/libs/apache/commons/lang3/StringUtilsTest.java,1\b\1b00099320577e25d4eccd62cd6d95a66066447d
+l
+<src/main/java/org/shithappens/libs/Cache/LocalCacheTest.java,2\6\26a5f7956f8403e80cec074643532d6bf90e87c6
+m
+=src/main/java/org/shithappens/libs/Cache/LocalGuavaCache.java,6\5\65b2de0568cf9822de2703305f1b2faea6abf9af

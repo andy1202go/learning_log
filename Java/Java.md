@@ -1,5 +1,3 @@
-
-
 # Java
 
 [toc]
@@ -48,15 +46,15 @@ Java中的String类包含了50多个方法，且绝大多数都很有用；
 
 先是数据准备
 
-![image-20210921121047731](/Users/liangbo/Desktop/Projects/Git/learning_log/Java/Lib/api/image-20210921121047731.png)
+![image-20210921121047731](./Lib/api/image-20210921121047731.png)
 
 然后是test主体
 
-![image-20210921121605464](/Users/liangbo/Desktop/Projects/Git/learning_log/Java/Lib/api/image-20210921121605464.png)
+![image-20210921121605464](/Lib/api/image-20210921121605464.png)
 
 运行看下
 
-![image-20210921121117429](/Users/liangbo/Desktop/Projects/Git/learning_log/Java/Lib/api/image-20210921121117429.png)
+![image-20210921121117429](./Lib/api/image-20210921121117429.png)
 
 简单得出以下结论
 
@@ -67,13 +65,13 @@ Java中的String类包含了50多个方法，且绝大多数都很有用；
 
 看下源码，indexOf()是走到String类的indexOf(str,fromIndex)这里，具体实现为
 
-![image-20210921122309760](/Users/liangbo/Desktop/Projects/Git/learning_log/Java/Lib/api/image-20210921122309760.png)
+![image-20210921122309760](./Lib/api/image-20210921122309760.png)
 
 这里的source和target是被搜索字段和搜索字符串的字符数组，也透露了String的本质，就是char[]
 
 代码的组织结构上，基本上是边界处理+数据准备+搜索实现三部分
 
-![image-20210921122533501](/Users/liangbo/Desktop/Projects/Git/learning_log/Java/Lib/api/image-20210921122533501.png)
+![image-20210921122533501](./Lib/api/image-20210921122533501.png)
 
 这里我比较关心的一点的是为啥当targetCount为0，返回是fromIndex啊？？一脸问号，等下试试
 
@@ -87,7 +85,7 @@ Java中的String类包含了50多个方法，且绝大多数都很有用；
 
 lastIndexOf的话
 
-![image-20210921123246211](/Users/liangbo/Desktop/Projects/Git/learning_log/Java/Lib/api/image-20210921123246211.png)
+![image-20210921123246211](/Lib/api/image-20210921123246211.png)
 
 其实代码组织类似，三段式；
 
@@ -97,7 +95,7 @@ lastIndexOf的话
 
 两者摆在一起看下，实现逻辑和思路真的差不多，但各种细节看的着实有点要疯..
 
-![image-20210921123552725](/Users/liangbo/Desktop/Projects/Git/learning_log/Java/Lib/api/image-20210921123552725.png)
+![image-20210921123552725](./Lib/api/image-20210921123552725.png)
 
 ###### 所以，从这里的源码可以学习到的是
 
@@ -108,7 +106,7 @@ lastIndexOf的话
 
 最后，我们再来看下，如果target是空字符串会怎样
 
-![image-20210921124208422](/Users/liangbo/Desktop/Projects/Git/learning_log/Java/Lib/api/image-20210921124208422.png)
+![image-20210921124208422](/Lib/api/image-20210921124208422.png)
 
 所以，使用indexOf系列的时候，一定不要搜索空字符串或者空对象，会得到预期之外的情况，诡异的bug这样子。
 

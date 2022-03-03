@@ -34,7 +34,11 @@ https://support.microsoft.com/zh-cn/office/%e5%a6%82%e4%bd%95%e6%9b%b4%e6%ad%a3-
 
 公式错误
 
+#### 对指定范围数据去重
 
+https://baijiahao.baidu.com/s?id=1641126232984763641&wfr=spider&for=pc
+
+数据板块，选定范围去重即可，好用，还得是官方的
 
 ## 参考文献
 
