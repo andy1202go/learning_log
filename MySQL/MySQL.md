@@ -189,6 +189,59 @@ MySQL服务器管理
 
 ### 12 Functions and Operators
 
+#### 12.1 Built-In Function and Operator Reference
+
+内嵌或称之为本地的函数和操作符
+
+##### IFNULL(expr1,expr2)
+
+> If expr1 is not NULL, IFNULL() returns expr1; otherwise it returns expr2.
+>
+> ```mysql
+> mysql> SELECT IFNULL(1,0);
+> -> 1
+> mysql> SELECT IFNULL(NULL,10);
+> -> 10
+> mysql> SELECT IFNULL(1/0,10);
+> -> 10
+> mysql> SELECT IFNULL(1/0,'yes');
+> -> 'yes'
+> ```
+
+使用上比较有意思，比如https://blog.csdn.net/weixin_38750084/article/details/83034248
+
+```mysql
+select IFNULL(mobile_phone,home_phone) phone 
+from employee
+```
+
+据说是最好不要用在where中，性能不好，不过一般用的也是is not null这种；
+
+##### REPLACE(str,from_str,to_str)
+
+> Returns the string str with all occurrences of the string from_str replaced by the string to_str.
+> REPLACE() performs a case-sensitive match when searching for from_str.
+>
+> ```mysql
+> mysql> SELECT REPLACE('www.mysql.com', 'w', 'Ww');
+> -> 'WwWwWw.mysql.com'
+> ```
+>
+> This function is multibyte safe.
+
+注意：
+
+- 大小写敏感
+- 多字节安全（由于字符集的表示，有可能使用多个字节表示一个字符，比如表情，导致的解析问题，待补充）
+
+实际使用中，比如结合update语句，更新某种条件下的某个字段中的所有出现的a为b
+
+```mysql
+Update `table_name` SET `field_name` = replace (`field_name`,’from_str’,'to_str’) Where `field_name` LIKE ‘%from_str%’
+```
+
+
+
 #### 12.7 Date and Time Functions
 
 ##### now()
@@ -290,6 +343,35 @@ ON DUPLICATE KEY UPDATE c = m+n;
 
 
 更复杂的用法是insert的内容是通过select语句找到的内容，这个后续再研究。
+
+##### 13.2.9 REPLACE Statement
+
+replace表达式类似insert，只是需要定位后删除原行，插入新行；
+
+所以replace必须用在有主键或唯一键的情况下；
+
+是MySQL对SQL的拓展。
+
+> REPLACE works exactly like INSERT, except that if an old row in the table has the same value as a new
+> row for a PRIMARY KEY or a UNIQUE index, the old row is deleted before the new row is inserted. See
+> Section 13.2.6, “INSERT Statement”.
+>
+> Note
+> REPLACE makes sense only if a table has a PRIMARY KEY or UNIQUE index.
+> Otherwise, it becomes equivalent to INSERT, because there is no index to be used to determine whether a new row duplicates another.
+
+另外，不要把replace语句和replace函数搞混了。
+
+##### 13.2.10 SELECT Statement
+
+关于distinct，文档是和ALL关键词一起说的，这两个都是修饰词（modifier）；
+
+distinct可以让结果集不重复；
+
+单一字段的结果集好理解，但是对于多个字段情况，实际上返回的是组合不重复的情况；
+
+> The ALL and DISTINCT modifiers specify whether duplicate rows should be returned. ALL (the default) specifies that all matching rows should be returned, including duplicates. DISTINCT specifies removal of duplicate rows from the result set. It is an error to specify both modifiers. DISTINCTROW is a synonym for DISTINCT.
+> In MySQL 8.0.12 and later, DISTINCT can be used with a query that also uses WITH ROLLUP. (Bug #87450, Bug #26640100)
 
 #### 13.6 Compound Statement Syntax
 
@@ -416,6 +498,23 @@ explain
 
 - 支持SELECT, DELETE, INSERT, REPLACE, and UPDATE语句，后续也会支持table语句
 - TODO
+
+#### 13.7 Database Administration Statements
+
+##### 13.7.7 SHOW Statements
+
+###### 13.7.7.41 SHOW VARIABLES Statement
+
+通过SHOW VARIABLES看MySQL的参数信息；
+
+可以拼接LIKE使用；
+
+```mysql
+SHOW VARIABLES LIKE '%size%';
+SHOW GLOBAL VARIABLES LIKE '%size%';
+```
+
+https://www.cnblogs.com/qlqwjy/p/8046592.html
 
 ### 14 MySQL Data Dictionary
 
