@@ -373,6 +373,65 @@ distinct可以让结果集不重复；
 > The ALL and DISTINCT modifiers specify whether duplicate rows should be returned. ALL (the default) specifies that all matching rows should be returned, including duplicates. DISTINCT specifies removal of duplicate rows from the result set. It is an error to specify both modifiers. DISTINCTROW is a synonym for DISTINCT.
 > In MySQL 8.0.12 and later, DISTINCT can be used with a query that also uses WITH ROLLUP. (Bug #87450, Bug #26640100)
 
+###### 13.2.10.2 JOIN Clause
+
+join首先分为内连接和外连接；
+
+- 内连接表示查询结果只返回符合连接条件的记录；
+- 外连接则不同，表示查询结果返回某一个表中的所有记录，以及另一个表中满足连接条件的记录。
+- MySQL中，INNER JOIN，JOIN，CROSS JOIN都是内连接，没区别；在SQL中则是有区别的；
+- OUTER JOIN 分为LEFT JOIN和RIGHT JOIN，左右分别表示返回左表或右表的所有数据；
+
+关于join有个重要问题是语句的性能怎么保证？综合目前了解到的（https://time.geekbang.org/column/article/79700，https://time.geekbang.org/column/article/80147），综合考虑下列两点
+
+1. 驱动表选择
+2. 算法选择
+
+关于驱动表，首先因为是join，所以多张表中，总有一张会被选为驱动表，从这张表的数据遍历，去其他表中查询所需结果；
+
+先给出结论：**选用小表做驱动表；且最好是可以用上被驱动表的索引的。**
+
+这里的小表是
+
+> 在决定哪个表做驱动表的时候，应该是两个表按照各自的条件过滤，过滤完成之后，计算参与 join 的各个字段的总数据量，数据量小的那个表，就是“小表”，应该作为驱动表。
+
+具体原因，需要分情况讨论：
+
+一种是可以走索引，我们称之为“Index Nested-Loop Join”，简称 NLJ；那么
+
+> 在这个 join 语句执行过程中，驱动表是走全表扫描，而被驱动表是走树搜索。
+>
+> 假设被驱动表的行数是 M。每次在被驱动表查一行数据，要先搜索索引 a，再搜索主键索引。每次搜索一棵树近似复杂度是以 2 为底的 M 的对数，记为 log2M，所以在被驱动表上查一行的时间复杂度是 2*log2M。假设驱动表的行数是 N，执行过程就要扫描驱动表 N 行，然后对于每一行，到被驱动表上匹配一次。因此整个执行过程，近似复杂度是 N + N*2*log2M。
+>
+> 显然，N 对扫描行数的影响更大，因此应该让小表来做驱动表。
+
+另一种是被驱动表用不上索引的情况；从最糟糕的Simple Nested-Loop Join算法（即直接遍历驱动表，然后遍历被驱动表），演进到Block Nested-Loop Join算法，优点在于将驱动表分段的载入内存中进行匹配，速度快很多；
+
+在这种情况下，
+
+> 假设，驱动表的数据行数是 N，需要分 K 段才能完成算法流程，被驱动表的数据行数是 M。注意，这里的 K 不是常数，N 越大 K 就会越大，因此把 K 表示为λ*N，显然λ的取值范围是 (0,1)。*
+>
+> *所以，在这个算法的执行过程中：
+>
+> *扫描行数是 N+λ*N*M；*
+>
+> *内存判断 N*M 次。
+>
+> 显然，内存判断次数是不受选择哪个表作为驱动表影响的。而考虑到扫描行数，在 M 和 N 大小确定的情况下，N 小一些，整个算式的结果会更小。
+>
+> 所以结论是，应该让小表当驱动表。
+
+当然，NLJ(Index Nested-Loop Join)和BNL(Block Nested-Loop Join)这两个算法也是有优化空间的；
+
+整体的思路是把原来算法中，一条一条去匹配的情况，往批量匹配的情况上靠，使用的手段是B+树的顺序读取的高性能+临时缓存的能力；具体参考上面的链接；
+
+> 在这些优化方法中：
+>
+> 1. BKA 优化是 MySQL 已经内置支持的，建议你默认使用；
+> 2. BNL 算法效率低，建议你都尽量转成 BKA 算法。优化的方向就是给被驱动表的关联字段加上索引；
+> 3. 基于临时表的改进方案，对于能够提前过滤出小数据的 join 语句来说，效果还是很好的；
+> 4. MySQL 目前的版本还不支持 hash join，但你可以配合应用端自己模拟出来，理论上效果要好于临时表的方案。
+
 #### 13.6 Compound Statement Syntax
 
 ##### 13.6.5 Flow Control Statements

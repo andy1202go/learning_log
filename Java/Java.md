@@ -185,6 +185,63 @@ https://blog.csdn.net/jpf254/article/details/80757041这篇文章梳理的比较
 
 ## 核心技术卷二
 
+### 5 国际化
+
+#### 5.3 日期和时间
+
+遇到一个case：如果DateFormat的时候，pattern是YYYY-MM-dd而不是yyyy-MM-dd的时候，在跨年周的时候会出现异常；
+
+ https://zhuanlan.zhihu.com/p/100648038
+
+调查之后会发现以下几点：
+
+- SimpleDateFormat中标定，YY表示Week year，yy表示year![image-20220309171655823](.\imgs\image-20220309171655823.png)
+
+- 所谓的Week year是ISO-8601标准的，来指出给定时间点是属于哪一年的标准
+
+  > Week-base-year（周历年）由 ISO 8601 定义，规则如下：
+  >
+  > （1）每周第一天是星期一，最后一天是星期日。
+  >
+  > （2）每年的第一周，是包含1月4日的那一周，每年的最后一周，是包含12月28日的那一周。这一条有很多表示法，但含义都等价。
+  >
+  > （3）一年有52-53周。
+  >
+  > 跟定定义，公历2019年12月30日~2020年1月5日这一周由于包含2020年1月4日，所以归属为2020年。
+  >
+  > 
+  >
+  > 参考：[https://en.wikipedia.org/wiki/ISO_week_date](http://link.zhihu.com/?target=https%3A//en.wikipedia.org/wiki/ISO_week_date)
+  > [https://zh.wikipedia.org/wiki/I](http://link.zhihu.com/?target=https%3A//zh.wikipedia.org/wiki/ISO%E9%80%B1%E6%97%A5%E6%9B%86)
+
+- 从源码来看的话，Y或者y的处理逻辑是一样的，但是怎么处理的并不明确还...
+
+  ```java
+  java.text.SimpleDateFormat
+      
+  		case PATTERN_WEEK_YEAR: // 'Y'
+          case PATTERN_YEAR:      // 'y'
+              if (calendar instanceof GregorianCalendar) {
+                  if (count != 2) {
+                      zeroPaddingNumber(value, count, maxIntCount, buffer);
+                  } else {
+                      zeroPaddingNumber(value, 2, 2, buffer);
+                  } // clip 1996 to 96
+              } else {
+                  if (current == null) {
+                      zeroPaddingNumber(value, style == Calendar.LONG ? 1 : count,
+                                        maxIntCount, buffer);
+                  }
+              }
+              break;
+  ```
+
+- 所谓的周历年，主要是在国外用的比较多，每年第几周这样子使用的
+
+- 所以不要在时间戳等场景使用YYYY这种，而且这种设计也不是用于当前场景的；
+
+- 全面使用Java8的LocalDateTime体系！！https://time.geekbang.org/column/article/224240
+
 ### 9 安全
 
 #### 9.1 类加载器
