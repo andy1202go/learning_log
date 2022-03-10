@@ -240,7 +240,41 @@ from employee
 Update `table_name` SET `field_name` = replace (`field_name`,’from_str’,'to_str’) Where `field_name` LIKE ‘%from_str%’
 ```
 
+#### 12.2 Loadable Function Reference
 
+#### 12.4 Operators
+
+##### 12.4.2 Comparison Functions and Operators
+
+- expr BETWEEN min AND max
+
+  双闭；
+
+  和符号<= >=等同；
+
+> If expr is greater than or equal to min and expr is less than or equal to max, BETWEEN returns 1,
+> otherwise it returns 0. This is equivalent to the expression (min <= expr AND expr <= max) if
+> all the arguments are of the same type
+
+```mysql
+mysql> SELECT 2 BETWEEN 1 AND 3, 2 BETWEEN 3 and 1;
+-> 1, 0
+mysql> SELECT 1 BETWEEN 2 AND 3;
+-> 0
+mysql> SELECT 'b' BETWEEN 'a' AND 'c';
+-> 1
+mysql> SELECT 2 BETWEEN 2 AND '3';
+-> 1
+mysql> SELECT 2 BETWEEN 2 AND 'x-3';
+-> 0
+```
+
+​		注意不同的日期的数据类型的between比较，比较好的是使用CAST()操作为同一种类型；
+
+> For best results when using BETWEEN with date or time values, use CAST() to explicitly convert the
+> values to the desired data type. Examples: If you compare a DATETIME to two DATE values, convert the
+> DATE values to DATETIME values. If you use a string constant such as '2001-1-1' in a comparison to
+> a DATE, cast the string to a DATE.
 
 #### 12.7 Date and Time Functions
 
@@ -364,7 +398,20 @@ replace表达式类似insert，只是需要定位后删除原行，插入新行�
 
 ##### 13.2.10 SELECT Statement
 
-关于distinct，文档是和ALL关键词一起说的，这两个都是修饰词（modifier）；
+**关于order by**
+
+- 针对每一个字段进行排序的；
+
+  ```mysql
+  order by a,b desc;
+  意味着先按照a的升序，再对重复的按照b的降序排列
+  ```
+
+  
+
+**关于distinct**
+
+文档是和ALL关键词一起说的，这两个都是修饰词（modifier）；
 
 distinct可以让结果集不重复；
 

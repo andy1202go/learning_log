@@ -48,6 +48,10 @@ redis>
 
 https://redis.io/commands/mset
 
+## 可视化管理软件
+
+官方的RedisInsighthttps://redis.com/redis-enterprise/redis-insight/#insight-form
+
 ## 参考文献
 
 1 
