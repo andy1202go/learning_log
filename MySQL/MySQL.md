@@ -140,6 +140,210 @@ MySQL服务器管理
 
 不如用left(date_time)的方式来，一方面保证了业务的正确性，一方面避免了走date_time索引全表扫描
 
+#### 8.8 Understanding the Query Execution Plan
+
+> The set of operations that the optimizer chooses to perform the most efficient query is called the “query execution plan”, also known as the EXPLAIN plan.
+
+##### 8.8.1 Optimizing Queries with EXPLAIN
+
+介绍了EXPLAIN语句的各种使用场景
+
+- 适用于多种语句
+- 看懂结果，从8.8.2的Format output来看
+- 可以EXPLAIN connection
+- 对于SELECT语句，可以有更多信息
+- EXPLAIN 对于检查涉及分区表的查询非常有用。
+- 多种输出格式
+
+优化器（optimizer）的tracing，有时候是EXPLAIN结果的有效补充。
+
+另外对于分析结果有异议的话，比如认为应该走某个索引但没有走的，可以使用ANALYZE语句重新对表格分析统计（TODO）；
+
+##### 8.8.2 EXPLAIN Output Format
+
+> EXPLAIN returns a row of information for each table used in the SELECT statement. It lists the tables in the output in the order that MySQL would read them while processing the statement. This means that MySQL reads a row from the first table, then finds a matching row in the second table, and then in the third table, and so on. When all tables are processed, MySQL outputs the selected columns and backtracks through the table list until a table is found for which there are more matching rows. The next row is read from this table and the process continues with the next table.
+
+也就是说，EXPLAIN的结果，是按照MySQL会读的顺序列出来的表；
+
+**EXPLAIN Output Columns**
+
+介绍执行计划输出的每一列的含义；其中的type和EXTRA会有单独的部分介绍的；
+
+> Each output row from EXPLAIN provides information about one table.
+
+执行计划输出的每一行，是每个table的信息。
+
+![image-20220311104419818](\资料\imgs\image-20220311104419818.png)
+
+- id SELECT的标识符。是query语句中SELECT的序号
+
+- select_type SELECT的类型
+
+- table 是哪个table的信息，除了正常的表格，有可能是derived（衍生的，派生的）、union、subquery
+
+- partitions 
+
+  > The partitions from which records would be matched by the query.
+
+- type 联接类型；前面这个是官方的名称join type的翻译，但实际上并不是多个表查询才是连接，更确切的是一种数据库引擎查找表的一种方式，称之为访问类型更好。
+
+- possible_keys 可能走的索引
+
+- key MySQL实际使用的索引，有可能不是possible_keys的其中之一
+
+- key_len 
+
+- ref 
+
+  > The ref column shows which columns or constants are compared to the index named in the key column to select rows from the table.
+  > If the value is func, the value used is the result of some function. To see which function, use SHOW WARNINGS following EXPLAIN to see the extended EXPLAIN output. The function might actually be an operator such as an arithmetic operator.
+
+- rows MySQL认为一定要扫描的行数，innodb的话，是个估计值
+
+- filtered 估计的筛选的百分比。参与join的行数，一般认为是rows*filtered。100%的话就是没有筛选。
+
+- Extra 额外信息。
+
+综合来看，select_type、key、rows可以直观看出查询的情况。type和EXTRA信息比较重要，可以反映出更多细节，单独篇章分析。
+
+**EXPLAIN Join Types**
+
+有以下几种，且按照由最优到最差的顺序排列：
+
+- system 
+
+  > The table has only one row (= system table). This is a special case of the const join type.
+
+- const 唯一匹配情况
+
+  通常是PRIMARY KEY 或UNIQUE KEY和常数的匹配情况。
+
+  ```mysql
+  SELECT * FROM tbl_name WHERE primary_key=1;
+  
+  SELECT * FROM tbl_name
+  WHERE primary_key_part1=1 AND primary_key_part2=2;
+  ```
+
+- eq_ref 
+
+  我的理解应该是多张表的情况，每个表的数据是一行一行映照着比对的。其中的eq表示条件是=，然后对索引的要求也是唯一键或主键，要全部使用才行。=的可以是常数也可以是表达式（expression）
+
+  ```mysql
+  SELECT * FROM ref_table,other_table
+  WHERE ref_table.key_column=other_table.column;
+  
+  SELECT * FROM ref_table,other_table
+  WHERE ref_table.key_column_part1=other_table.column
+  AND ref_table.key_column_part2=1;
+  ```
+
+- ref
+
+  同上，多张表的行行匹配。然后索引的最左被使用到就行，也是范围的情况的type。理论上就是这种类型，通过索引只能查到一个范围，不能像eq那种直接定位到一行具体数据。
+
+  ```mysql
+  SELECT * FROM ref_table WHERE key_column=expr;
+  
+  SELECT * FROM ref_table,other_table
+  WHERE ref_table.key_column=other_table.column;
+  
+  SELECT * FROM ref_table,other_table
+  WHERE ref_table.key_column_part1=other_table.column
+  AND ref_table.key_column_part2=1;
+  ```
+
+- fulltext
+
+  使用了FULLTEXT索引类型的。
+
+- ref_or_null
+
+  ref基础上，条件中有null类型的判断
+
+  > This join type is like ref, but with the addition that MySQL does an extra search for rows that contain NULL values.
+
+  ```mysql
+  SELECT * FROM ref_table
+  WHERE key_column=expr OR key_column IS NULL;
+  ```
+
+- index_merge
+
+  说是多个索引会被使用到，从官方文档暂时没看懂..
+
+  https://www.cnblogs.com/digdeep/archive/2015/11/18/4975977.html
+
+  大概是多个索引扫描并合并结果进行使用，是MySQL5.0之后的能力。
+
+  更多信息在8.2.1.3部分阐述。
+
+- unique_subquery
+
+  > This type replaces eq_ref for some IN subqueries of the following form:
+  >
+  > ```mysql
+  > value IN (SELECT primary_key FROM single_table WHERE some_expr)
+  > ```
+  >
+  > unique_subquery is just an index lookup function that replaces the subquery completely for better efficiency.
+
+  充分替换子查询，以提高查询效率的；
+
+- index_subquery
+
+  类似上述，只是不是唯一索引的；
+
+- range
+
+  使用了索引，但只是检索出了一个范围的情况。ref这个时候是NULL。
+
+  各种单表查询情况应该都可能出现
+
+  ```mysql
+  SELECT * FROM tbl_name
+  WHERE key_column = 10;
+  
+  SELECT * FROM tbl_name
+  WHERE key_column BETWEEN 10 and 20;
+  
+  SELECT * FROM tbl_name
+  WHERE key_column IN (10,20,30);
+  
+  SELECT * FROM tbl_name
+  WHERE key_part1 = 10 AND key_part2 IN (10,20,30);
+  ```
+
+- index
+
+  类似ALL情况，只是索引树是被扫描了的。
+
+  有两种情况，一种是索引完全覆盖了查询所需，这是EXTRA会显示Using index；另一种是没有覆盖，需要回表的。
+
+- ALL
+
+  全表扫描。
+
+  如果表是第一个未标记为 const 的表，以及其他各种情况，通常不好。
+
+  请使用索引加速。
+
+**EXPLAIN Extra Information**
+
+MySQL解决查询的额外信息。如果想持续优化查询，持续关注Using filesort和Using temporary
+
+情况非常多，具体碰到之后再研究吧..
+
+**EXPLAIN Output Interpretation**
+
+以一个具体case来阐述如何使用执行计划。
+
+##### 8.8.3 Extended EXPLAIN Output Format
+
+##### 8.8.4 Obtaining Execution Plan Information for a Named Connection
+
+##### 8.8.5 Estimating Query Performance
+
 ### 9 Language Structure
 
 语言结构（？）
@@ -275,6 +479,12 @@ mysql> SELECT 2 BETWEEN 2 AND 'x-3';
 > values to the desired data type. Examples: If you compare a DATETIME to two DATE values, convert the
 > DATE values to DATETIME values. If you use a string constant such as '2001-1-1' in a comparison to
 > a DATE, cast the string to a DATE.
+
+- expr NOT BETWEEN min AND max
+
+  > This is the same as NOT (expr BETWEEN min AND max).
+
+  between的取反，但注意两端；就是[a,b]和(-oo,a)(b,+oo)的情况；
 
 #### 12.7 Date and Time Functions
 
@@ -603,7 +813,12 @@ desc table_name;
 explain
 
 - 支持SELECT, DELETE, INSERT, REPLACE, and UPDATE语句，后续也会支持table语句
-- TODO
+- > When EXPLAIN is used with an explainable statement, MySQL displays information from the optimizer
+  > about the statement execution plan. That is, MySQL explains how it would process the statement,
+  > including information about how tables are joined and in which order. For information about using
+  > EXPLAIN to obtain execution plan information, see Section 8.8.2, “EXPLAIN Output Format”.
+
+  具体学习看执行计划，要到8.8章节；
 
 #### 13.7 Database Administration Statements
 
