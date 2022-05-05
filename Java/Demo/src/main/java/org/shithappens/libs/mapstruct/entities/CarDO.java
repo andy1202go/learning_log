@@ -1,5 +1,9 @@
 package org.shithappens.libs.mapstruct.entities;
 
+
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Size;
+
 /**
  * 车做
  *
@@ -7,6 +11,8 @@ package org.shithappens.libs.mapstruct.entities;
  * @date 2021/09/12
  */
 public class CarDO {
+    @Size(min = 20)
+    @Max(30)
    private String name;
    private String color;
 

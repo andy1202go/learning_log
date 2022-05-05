@@ -48,6 +48,20 @@ redis>
 
 https://redis.io/commands/mset
 
+### TTL
+
+**解释**
+
+ttl key 
+
+Redis TTL 命令以秒为单位返回 key 的剩余过期时间。
+
+### 返回值
+
+当 key 不存在时，返回 -2 。 当 key 存在但没有设置剩余生存时间时，返回 -1 。 否则，以秒为单位，返回 key 的剩余生存时间。
+
+**注意：**在 Redis 2.8 以前，当 key 不存在，或者 key 没有设置剩余生存时间时，命令都返回 -1 。
+
 ## 可视化管理软件
 
 官方的RedisInsighthttps://redis.com/redis-enterprise/redis-insight/#insight-form

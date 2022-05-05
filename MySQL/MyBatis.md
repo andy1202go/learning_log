@@ -84,7 +84,45 @@ Error querying database. Cause: java.lang.IndexOutOfBoundsException: Index: 3, S
 
 延伸第二下，if和test标签是规范在dtd文件的，这个也可以了解下。
 
+### 日志
 
+> Mybatis 通过使用内置的日志工厂提供日志功能。内置日志工厂将会把日志工作委托给下面的实现之一：
+>
+> - SLF4J
+> - Apache Commons Logging
+> - Log4j 2
+> - Log4j (deprecated since 3.5.9)
+> - JDK logging
+>
+> MyBatis 内置日志工厂基于运行时自省机制选择合适的日志工具。它会使用第一个查找得到的工具（按上文列举的顺序查找）。如果一个都未找到，日志功能就会被禁用。
+
+基本实现就两步：
+
+1. mybatis-config.xml里添加<setting>
+
+   ```xml
+   <configuration>
+     <settings>
+       ...
+       <setting name="logImpl" value="LOG4J"/>
+       ...
+     </settings>
+   </configuration>
+   ```
+
+   logImpl 可选的值有：SLF4J、LOG4J、LOG4J2、JDK_LOGGING、COMMONS_LOGGING、STDOUT_LOGGING、NO_LOGGING，或者是实现了接口 `org.apache.ibatis.logging.Log` 的，且构造方法是以字符串为参数的类的完全限定名。（译者注：可以参考org.apache.ibatis.logging.slf4j.Slf4jImpl.java的实现）
+
+2. 在对应的日志配置中，添加logger
+
+   比如Logback的配置中添加
+
+   ```xml
+     <logger name="org.mybatis.dao">
+       <level value="trace"/>
+     </logger>
+   ```
+
+不同的日志实现的配置示例，在官网都找得到。
 
 ## 参考mybatis-spring
 

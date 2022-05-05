@@ -228,6 +228,28 @@ https://zhuanlan.zhihu.com/p/400657663
 
 其他各种系统中使用corn的场景，一方面参考上述链接，一方面慢慢遇到了再整理。
 
+## 常用命令
+
+### grep
+
+用于查找文件里符合条件的字符串；
+
+常用的几种
+
+```shell
+grep "abc"
+grep -A 10 "abc" (After)
+grep -B 10 "abc" (Before)
+grep -C 10 "abc" (Context)
+grep "a" | grep "b" | grep "c" 多个关键词，使用管道实现
+```
+
+
+
+
+
+
+
 ## 参考文献
 
 1 

@@ -1,11 +1,11 @@
 
 @
 java:S1481"+Remove this unused "carDTO" local variable.(ú‘¶P
-U
-java:S1854":Remove this useless assignment to local variable "logger".(÷ìûÿÿÿÿ
-F
-java:S1481"+Remove this unused "logger" local variable.(÷ìûÿÿÿÿ
 O
 java:S1854":Remove this useless assignment to local variable "carDTO".(ú‘¶P
 A
 java:S1481"&Remove this unused "a" local variable.(¥Ÿëşÿÿÿÿ
+F
+java:S1481"+Remove this unused "logger" local variable.(÷ìûÿÿÿÿ
+U
+java:S1854":Remove this useless assignment to local variable "logger".(÷ìûÿÿÿÿ

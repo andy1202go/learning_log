@@ -632,6 +632,14 @@ distinct可以让结果集不重复；
 
 ###### 13.2.10.2 JOIN Clause
 
+2022-05-05 补充一个基本使用点，join on 多个条件，其实就是用and连接，但是之前很少这样去用。
+
+```mysql
+join on a.id = b.id and a.id = 3
+```
+
+
+
 join首先分为内连接和外连接；
 
 - 内连接表示查询结果只返回符合连接条件的记录；
@@ -1002,6 +1010,12 @@ ALTER TABLE tablename DROP [COLUMN] col_name;
 ALTER TABLE tablename CHANGE [COLUMN] old_col_name new_column_definition;
 ---表改名
 ALTER TABLE tablename RENAME [TO] new_tablename;
+
+--对同一张表的多个DDL可以合并为一条语句
+ALTER TABLE a
+DROP sth,
+ADD COLUMN 'asdrt',
+ADD INDEX idx_d(dfd);
 ```
 
 ##### 2.2.3 DML语句
@@ -1097,6 +1111,18 @@ assignment [, assignment] ...
 UPDATE [LOW_PRIORITY] [IGNORE] table_references
 SET assignment_list
 [WHERE where_condition]
+```
+
+2022-05-05 补充 在update语句中，使用查询锁定范围的方式
+
+参考https://wenku.baidu.com/view/0a68a31213661ed9ad51f01dc281e53a5802513b.html
+
+主要用到的是join的能力
+
+```mysql
+update a inner join (select * from b) temp on temp.id = a.id 
+set a.name = "shit"
+where a.del_status = 1
 ```
 
 
