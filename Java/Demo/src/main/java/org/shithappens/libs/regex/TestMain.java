@@ -100,6 +100,12 @@ public class TestMain {
 
     private static final String NUM_PATTERN = "^[0-9]*$";
 
+    /**
+     *     作者介绍了一个可以检查质数的正则表达式/^1?$|^(11+?)\1+$/。
+     *     https://www.noulakaz.net/2007/03/18/a-regular-expression-to-check-for-prime-numbers/
+     *     要把一个数字转化为1111的序列，比如3就是”111“
+     */
+
     public static void main(String[] args) {
         Pattern patternNum = Pattern.compile(NUM_PATTERN);
         Matcher matcherNum = patternNum.matcher(TestingSet.LONG_STR);

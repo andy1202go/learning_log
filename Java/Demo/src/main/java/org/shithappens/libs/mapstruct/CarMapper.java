@@ -2,8 +2,8 @@ package org.shithappens.libs.mapstruct;
 
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
-import org.shithappens.libs.mapstruct.entities.CarDO;
-import org.shithappens.libs.mapstruct.entities.CarDTO;
+import org.shithappens.libs.entities.CarDO;
+import org.shithappens.libs.entities.CarDTO;
 
 /**
  * 汽车映射器

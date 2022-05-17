@@ -1,4 +1,4 @@
-package org.shithappens.libs.mapstruct.entities;
+package org.shithappens.libs.entities;
 
 
 import javax.validation.constraints.Max;

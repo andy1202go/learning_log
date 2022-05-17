@@ -1,7 +1,7 @@
 package org.shithappens.libs.mapstruct;
 
-import org.shithappens.libs.mapstruct.entities.CarDO;
-import org.shithappens.libs.mapstruct.entities.CarDTO;
+import org.shithappens.libs.entities.CarDO;
+import org.shithappens.libs.entities.CarDTO;
 
 import java.util.logging.Logger;
 

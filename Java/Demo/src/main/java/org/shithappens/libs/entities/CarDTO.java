@@ -1,4 +1,4 @@
-package org.shithappens.libs.mapstruct.entities;
+package org.shithappens.libs.entities;
 
 /**
  * 汽车dto

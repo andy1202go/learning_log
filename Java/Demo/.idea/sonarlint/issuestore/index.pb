@@ -33,5 +33,9 @@ m
 =src/main/java/org/shithappens/libs/Cache/LocalGuavaCache.java,6\5\65b2de0568cf9822de2703305f1b2faea6abf9af
 k
 ;src/main/java/org/shithappens/libs/oldDate/OldDateTest.java,6\7\6718123db7f34a3b6961cb9fc24351f950cfd910
-p
-@src/main/java/org/shithappens/libs/mapstruct/entities/CarDO.java,5\a\5a44a5c8e52aedbc3214eb7fac2c4ceab4bf6c20
+f
+6src/main/java/org/shithappens/libs/entities/CarDO.java,4\e\4ed906bfd64e0df25f74c1abc9641be20ebe522a
+g
+7src/main/java/org/shithappens/libs/entities/CarDTO.java,e\1\e1a2785ccaa05f54b4ca99f95837259598410171
+e
+5src/main/java/org/shithappens/libs/entities/User.java,3\5\35a5af0ad47b4a77c00613faf8bae2a925c58a5c
