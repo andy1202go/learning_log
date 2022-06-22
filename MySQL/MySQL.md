@@ -379,13 +379,66 @@ MySQL解决查询的额外信息。如果想持续优化查询，持续关注Usi
 
 通过SHOW COLLATION WHERE Charset = 'utf8mb4';查看排列规则；
 
+排序规则有以下几点特性
+
 - 每种字符集有默认的collation；
 - 不同的字符集，不可能有相同的collation
-- collation的命名有规则，一般是以对应的character set开头，然后跟1个或多个collation特性的描述，比如utf8mb4_general_ci
+- collation的命名有规则，一般是以对应的character set开头，然后跟1个或多个collation特性的描述，比如utf8mb4_general_ci；特性的具体，参考[10.3.1 Collation Naming Conventions](#####10.3.1 Collation Naming Conventions)
+
+> mysql4.1及其之后的版本，对字符集的支持分为四个层次:
+>
+> 服务器(server)，数据库(database)，数据表(table)和连接(connection)：character_set_server：这是设置服务器使用的字符集
+>
+> character_set_client ：这是设置客户端发送查询使用的字符集
+>
+> character_set_connection ：这是设置服务器需要将收到的查询串转换成的字符集
+>
+> character_set_results ：这是设置服务器要将结果数据转换到的字符集，转换后才发送给客户端
+>
+> 可以通过下面的SQL语句来查看这4个值SHOW VARIABLES LIKE '%character_set%';
 
 ##### 10.2.1 Character Set Repertoire
 
 ##### 10.2.2 UTF-8 for Metadata
+
+#### 10.3 Specifying Character Sets and Collations
+
+默认的字符集和排序规则，可能不符合使用需要，可以指定四个维度（server, database, table, and column.）的设定。
+
+##### 10.3.1 Collation Naming Conventions
+
+排序规则的命名约定，有以下几个
+
+1. collation的命名，一般是其关联的字符集打头，关联几个排序规则特性，比如utf8mb4_0900_ai_ci；特殊一点的是binary字符集对应的排序规则也叫binary；
+
+2. 和语言相关的排序规则，命名中包含地理信息或语言名称，比如
+
+   > For example, utf8mb4_tr_0900_ai_ci and utf8mb4_hu_0900_ai_ci sort characters for the utf8mb4 character set using the rules of Turkish and Hungarian, respectively.
+
+3. 排序规则命名中的后缀，指明该排序规则是否：大小写敏感，重音敏感，片假名敏感，二进制；具体如下表
+
+   | Suffix | Meaning            |
+   | ------ | ------------------ |
+   | _ai    | accent insensitive |
+   | _as    | accent sensitive   |
+   | _ci    | case insensitive   |
+   | _cs    | case sensitive     |
+   | _ks    | Kana-sensitive     |
+   | _bin   | binary             |
+
+   还有几点特殊说明：
+
+   - 对于没有显式声明accent-sensitive的，跟着case-sensitive来走；
+
+   - binary和_bin两种排序规则，是不同的：
+
+     > For the binary collation of the binary character set, comparisons are based on numeric byte values. 
+     >
+     > For the _bin collation of a nonbinary character set, comparisons are based on numeric character code values, which differ from byte values for multibyte characters
+
+4. Unicode字符集相关的collation，会在命名中标识其基于的算法（UCA）版本，默认是4.0.0；比如：utf8mb4_0900_ai_ci is based on UCA 9.0.0 weight keys
+
+5. _general类型的，好像是兼容之前版本的MySQL的，没仔细搞懂这个。
 
 ### 11 Data Types
 
@@ -608,7 +661,7 @@ replace表达式类似insert，只是需要定位后删除原行，插入新行�
 
 ##### 13.2.10 SELECT Statement
 
-**关于order by**
+###### **关于order by**
 
 - 针对每一个字段进行排序的；
 
@@ -619,7 +672,7 @@ replace表达式类似insert，只是需要定位后删除原行，插入新行�
 
   
 
-**关于distinct**
+###### **关于distinct**
 
 文档是和ALL关键词一起说的，这两个都是修饰词（modifier）；
 
@@ -696,6 +749,95 @@ join首先分为内连接和外连接；
 > 2. BNL 算法效率低，建议你都尽量转成 BKA 算法。优化的方向就是给被驱动表的关联字段加上索引；
 > 3. 基于临时表的改进方案，对于能够提前过滤出小数据的 join 语句来说，效果还是很好的；
 > 4. MySQL 目前的版本还不支持 hash join，但你可以配合应用端自己模拟出来，理论上效果要好于临时表的方案。
+
+##### 13.2.11 Subqueries
+
+子查询，定义是在另一个声明中的select语句；
+
+主要优点有：
+
+- 使语句结构化，也就是说可以隔离不同的查询；也是SQL的structured的来源；
+- 是复杂的join和union的替代用法；
+- 相比union和join，可读性更好；
+
+官方给了一个示例，说明以上观点：
+
+```sql
+DELETE FROM t1
+WHERE s11 > ANY
+(SELECT COUNT(*) /* no hint */ FROM t2
+WHERE NOT EXISTS
+(SELECT * FROM t3
+WHERE ROW(5*t2.s1,77)=
+(SELECT 50,11*s1 FROM t4 UNION SELECT 50,77 FROM
+(SELECT * FROM t5) AS t5)));
+```
+
+普通的select的东西，子查询都能用；另外，子查询可以用于外层是: SELECT, INSERT, UPDATE, DELETE, SET, or DO的情况下；
+
+###### 13.2.11.10 Subquery Errors
+
+有些子查询独有的错误：
+
+- Unsupported subquery syntax
+
+Message = "This version of MySQL doesn't yet support
+
+版本不支持
+
+- Incorrect number of columns from subquery
+
+Message = "Operand should contain 1 column(s)"
+
+类似：
+
+```sql
+SELECT (SELECT column1, column2 FROM t2) FROM t1;
+```
+
+子查询返回的，一般要求是单个，不管是列结果还是啥的，称为scalar
+>A subquery can return a scalar (a single value), a single row, a single column, or a table (one or more rows
+>of one or more columns). These are called scalar, column, row, and table subqueries.
+
+- Incorrect number of rows from subquery:
+
+Message = "Subquery returns more than 1 row"
+
+类似：
+
+```sql
+SELECT * FROM t1 WHERE column1 = (SELECT column1 FROM t2);
+```
+
+- Incorrectly used table in subquery
+
+Message = "You can't specify target table 'x' for update in FROM clause"
+
+当尝试通过查询某张表的范围后，更新同一张表的时候出现，类似：
+
+```sql
+UPDATE t1 SET column2 = (SELECT MAX(column1) FROM t1);
+```
+
+可以通过common table expression(公用表？？)或派生表来解决；也就是说，把子查询的内容，select生成临时表，再执行update操作；详情参考[13.2.11.12 Restrictions on Subqueries](######13.2.11.12 Restrictions on Subqueries)
+
+###### 13.2.11.12 Restrictions on Subqueries
+
+1. 不能直接用于Update等，同一张表的情况
+
+```sql
+DELETE FROM t WHERE ... (SELECT ... FROM t ...);
+UPDATE t ... WHERE col = (SELECT ... FROM t ...);
+{INSERT|REPLACE} INTO t (SELECT ... FROM t ...);
+```
+
+但是有一种解决方法：如果对于修改后的表，您正在使用派生表并且该派生表已具体化而不是合并到外部查询中，则上述禁令不适用。
+
+```sql
+UPDATE t ... WHERE col = (SELECT * FROM (SELECT ... FROM t...) AS dt ...);
+```
+
+> Here the result from the derived table is materialized as a temporary table, so the relevant rows in t have already been selected by the time the update to t takes place.
 
 #### 13.6 Compound Statement Syntax
 

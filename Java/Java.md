@@ -183,6 +183,79 @@ https://blog.csdn.net/jpf254/article/details/80757041这篇文章梳理的比较
 
 - [ ] 结合代码来梳理看下
 
+### 13 集合
+
+#### 13.1 集合接口
+
+##### 13.1.2 Java类库中的集合接口和迭代器接口
+
+在Java类库中，集合类的基本接口是Collection接口，其中有各种方法，基本的有两个：(1.8版本)
+
+```java
+public interface Collection<E> extends Iterable<E> {
+	boolean add(E element);
+    Iterator<E> iterator();
+    ...
+}
+```
+
+add方法用于向集合中添加元素，如果成功改变了集合，返回true，否则返回false;
+
+iterator方法会返回一个实现了Iterator接口的对象，即迭代器；
+
+1. 迭代器
+
+Iterator接口包含4个方法（1.8版本）：
+
+```java
+public interface Iterator<E> {
+    boolean hasNext();
+    E next();
+    void remove();
+    default void forEachRemaining(Consumer<? super E> action) {
+        Objects.requireNonNull(action);
+        while (hasNext())
+            action.accept(next());
+    }
+}
+```
+
+通过反复调用next方法，可以遍历整个集合。但是如果next没有拿到数据，会抛出异常，所以要先用hasNext方法做判断。
+
+前面Collection接口的定义可以看到，是继承了Iterable接口的；继承了这个接口的类，是支持使用for each进行遍历的。
+
+**特别注意**：Java集合类库的迭代器和其他类库中的迭代器，在概念上有重要区别！！！举例C++的迭代器，是可以直接输入下标查找元素的，但Java的不是。**查找操作与位置变更是紧密相连的！**查找一个元素的唯一方式是调用next方法，而在执行查找操作的时候，迭代器的位置也随之移动。
+
+因此，**应该将Java迭代器认为是位于两个元素之间！**当调用next时，迭代器就越过下一个元素，并返回刚刚越过的那个元素的引用。等效类推：InputStream.read，每从数据流中读取一个字节，就会消耗掉这个字节。
+
+2. 删除元素
+
+**remove方法会删除上次调用next方法时返回的元素**。牢记这个定义！！！next和remove的调用有依赖性！
+
+也就是说，调用remove的时候，一定要明确删除的是哪个元素，是不是自己期望的那个。
+
+如果调用remove之前没有调用next，会报IllegalStateException。
+
+3. 泛型实用方法
+
+Collection接口提供了大量实用的泛型方法，但实现一个集合，不一定希望实现所有接口方法，可以继承官方提供的AbstractCollection。
+
+```java
+public class SelfCollection<E> extends AbstractCollection<E> {
+    @Override
+    public Iterator<E> iterator() {
+        return null;
+    }
+
+    @Override
+    public int size() {
+        return 0;
+    }
+}
+```
+
+可以看到，继承一个抽象集合类，自己只需要实现这两个方法。当然，类似AbstractList->List->ArrayList这种继承链，需要自行定义数据结构，自行设定Iterator类这样子。
+
 ## 核心技术卷二
 
 ### 5 国际化

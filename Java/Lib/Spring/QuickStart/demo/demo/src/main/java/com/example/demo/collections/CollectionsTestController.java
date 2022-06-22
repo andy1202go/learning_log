@@ -5,6 +5,7 @@
  *****************************************************************************/
 package com.example.demo.collections;
 
+import com.alibaba.fastjson.JSON;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -44,5 +45,14 @@ public class CollectionsTestController {
             log.info("key={}", key);
         }
     }
+
+    @RequestMapping(value = "/self")
+    public String self() {
+        SelfCollection selfCollection = new SelfCollection();
+        selfCollection.add("shit");
+        log.info("{}", JSON.toJSONString(selfCollection));
+        return "success";
+    }
+
 
 }
