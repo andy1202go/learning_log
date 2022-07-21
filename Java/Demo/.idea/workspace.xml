@@ -1,34 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="ALL" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="6172b00e-3a9d-4d4b-abef-cf2b958230de" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/shithappens/libs/entities/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Lib/Spring/QuickStart/demo/demo/src/main/java/com/example/demo/validation/GlobalAPIExceptionHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Lib/Spring/QuickStart/demo/demo/src/main/java/com/example/demo/validation/PrimeValidator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Lib/Spring/QuickStart/demo/demo/src/main/java/com/example/demo/validation/ValidationTestController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Lib/Spring/QuickStart/demo/demo/src/main/java/com/example/demo/validation/entities/DeeperObject.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Lib/Spring/QuickStart/demo/demo/src/main/java/com/example/demo/validation/entities/PrimeValidateAnnotation.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Lib/Spring/QuickStart/demo/demo/src/main/java/com/example/demo/validation/entities/ValidationGroups.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Lib/Spring/QuickStart/demo/demo/src/main/java/com/example/demo/validation/entities/ValidationList.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Lib/Spring/QuickStart/demo/demo/src/main/java/com/example/demo/validation/entities/ValidationObject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/4/043bb364c365b47cbe9f567c2ba519b4092c4b7e" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/4/043bb364c365b47cbe9f567c2ba519b4092c4b7e" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/b/1b00099320577e25d4eccd62cd6d95a66066447d" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/b/1b00099320577e25d4eccd62cd6d95a66066447d" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/3/63591a3915c95529c0c6c9212a1c8f0a365afc94" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/3/63591a3915c95529c0c6c9212a1c8f0a365afc94" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/9/e9fe4def5f9d763814dc3e66c9c65edc9038e561" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/9/e9fe4def5f9d763814dc3e66c9c65edc9038e561" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/shithappens/libs/oldDate/ThreadSafeTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/shithappens/libs/oldDate/img.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/shithappens/libs/stream/StreamTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/shithappens/libs/stream/UserPo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/shithappens/libs/collections/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/shithappens/libs/collections/Test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/shithappens/libs/mapstruct/CarMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/shithappens/libs/mapstruct/CarMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/shithappens/libs/mapstruct/DemoMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/shithappens/libs/mapstruct/DemoMain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/shithappens/libs/mapstruct/entities/CarDO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/shithappens/libs/entities/CarDO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/shithappens/libs/mapstruct/entities/CarDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/shithappens/libs/entities/CarDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/shithappens/libs/regex/TestMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/shithappens/libs/regex/TestMain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/shithappens/libs/Cache/LocalCacheTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/shithappens/libs/cache/LocalCacheTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/shithappens/libs/Cache/LocalGuavaCache.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/shithappens/libs/cache/LocalGuavaCache.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/Demo.kotlin_module" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/generated-sources/annotations/org/shithappens/libs/mapstruct/CarMapperImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/generated-sources/annotations/org/shithappens/libs/mapstruct/CarMapperImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lib/Spring/QuickStart/demo/demo/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Lib/Spring/QuickStart/demo/demo/pom.xml" afterDir="false" />
     </list>
-    <ignored path="$PROJECT_DIR$/out/" />
-    <ignored path="$PROJECT_DIR$/target/" />
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -36,44 +23,6 @@
   </component>
   <component name="DefaultGradleProjectSettings">
     <option name="isMigrated" value="true" />
-  </component>
-  <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/shithappens/libs/entities/User.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="19" selection-start-line="19" selection-end-line="19" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/shithappens/libs/collections/Test.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="80">
-              <caret line="10" column="19" selection-start-line="10" selection-start-column="19" selection-end-line="10" selection-end-column="19" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/shithappens/libs/regex/TestMain.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="632">
-              <caret line="111" selection-start-line="111" selection-end-line="112" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="docComment;field#NUM_PATTERN#0;class#TestMain#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -98,6 +47,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_212.jdk/Contents/Home/src.zip!/java/text/DateFormat.java" root0="FORCE_HIGHLIGHTING" />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
@@ -116,18 +68,15 @@
       </list>
     </option>
   </component>
-  <component name="MavenImportPreferences">
-    <option name="importingSettings">
-      <MavenImportingSettings>
-        <option name="importAutomatically" value="true" />
-      </MavenImportingSettings>
-    </option>
-  </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-7" />
     <option name="y" value="33" />
     <option name="width" value="1295" />
     <option name="height" value="695" />
+  </component>
+  <component name="ProjectId" id="2BnPMA0AoUBePPjogqCskK41NOO" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -274,6 +223,9 @@
       <pane id="PackagesPane" />
     </panes>
   </component>
+  <component name="ProjectViewState">
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -281,24 +233,15 @@
     <property name="extract.method.default.visibility" value="private" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
+  <component name="ReaderModeSettings">
+    <option name="enabled" value="false" />
+  </component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="org.shithappens.libs" />
     </key>
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
-  <component name="RunManager" selected="Application.Test">
+  <component name="RunManager" selected="Application.StreamTest">
     <configuration name="DemoMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.shithappens.libs.mapstruct.DemoMain" />
       <module name="Demo" />
@@ -312,25 +255,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="JavaApiTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.shithappens.libs.string.JavaApiTest" />
-      <module name="Demo" />
+    <configuration name="StreamTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.shithappens.libs.stream.StreamTest" />
+      <module name="java-demo" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.shithappens.libs.string.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="OldDateTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.shithappens.libs.oldDate.OldDateTest" />
-      <module name="Demo" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.shithappens.libs.oldDate.*" />
+          <option name="PATTERN" value="org.shithappens.libs.stream.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -364,16 +294,30 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ThreadSafeTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.shithappens.libs.oldDate.ThreadSafeTest" />
+      <module name="java-demo" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.shithappens.libs.oldDate.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.StreamTest" />
+        <item itemvalue="Application.ThreadSafeTest" />
         <item itemvalue="Application.Test" />
         <item itemvalue="Application.StringUtilsTest" />
         <item itemvalue="Application.DemoMain" />
-        <item itemvalue="Application.OldDateTest" />
-        <item itemvalue="Application.JavaApiTest" />
       </list>
     </recent_temporary>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="StructureViewFactory">
     <option name="ACTIVE_ACTIONS" value=",ALPHA_COMPARATOR,SHOW_FIELDS" />
   </component>
@@ -494,56 +438,75 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/shithappens/libs/string/JavaApiTest.java</url>
-          <line>25</line>
-          <properties />
+          <line>41</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>jar://C:/Program Files/Java/jdk1.8.0_281/src.zip!/java/text/SimpleDateFormat.java</url>
           <line>942</line>
-          <properties />
           <option name="timeStamp" value="3" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>jar://C:/Program Files/Java/jdk1.8.0_281/src.zip!/java/text/SimpleDateFormat.java</url>
           <line>1100</line>
-          <properties />
           <option name="timeStamp" value="4" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>jar://C:/Program Files/Java/jdk1.8.0_281/src.zip!/java/text/SimpleDateFormat.java</url>
           <line>1145</line>
-          <properties />
           <option name="timeStamp" value="5" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/shithappens/libs/oldDate/OldDateTest.java</url>
           <line>28</line>
-          <properties />
           <option name="timeStamp" value="6" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/shithappens/libs/apache/commons/lang3/StringUtilsTest.java</url>
           <line>55</line>
-          <properties />
           <option name="timeStamp" value="7" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/shithappens/libs/mapstruct/DemoMain.java</url>
           <line>14</line>
-          <properties />
           <option name="timeStamp" value="8" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/shithappens/libs/apache/commons/lang3/StringUtilsTest.java</url>
           <line>37</line>
-          <properties />
           <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/shithappens/libs/oldDate/ThreadSafeTest.java</url>
+          <line>58</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/shithappens/libs/oldDate/ThreadSafeTest.java</url>
+          <line>66</line>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/shithappens/libs/oldDate/ThreadSafeTest.java</url>
+          <line>61</line>
+          <option name="timeStamp" value="12" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
