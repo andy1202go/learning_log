@@ -9,7 +9,7 @@ package org.shithappens.libs.cache;
  * @author liangbo
  * @version V1.0
  * @Title: LocalCacheTest.java
- * @Package org.shithappens.libs.Cache
+ * @Package org.shithappens.libs.cache
  * @Description 本地缓存实现
  * @date 2022 03-03 17:16.
  */

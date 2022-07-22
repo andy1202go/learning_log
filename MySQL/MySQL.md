@@ -1375,7 +1375,17 @@ alter table table_name change column_name column_name varchar(100) character set
 反斜线，MySQL uses C escape syntax in strings (for example, \n to represent the
 newline character).
 
+### 3 大页码的sql语句问题
 
+#### 3.1 业务上限制
+
+不允许用户翻这么多页啥的
+
+#### 3.2 游标
+
+id>80000类似，但是对主键有必须连贯的要求，要么就是记录游标位置，后者就复杂了；或者说业务没有那么谨慎，比如下拉这种；
+
+https://mp.weixin.qq.com/s/xul445fhIeHmZguYEoXq1g
 
 ## 参考文献
 
