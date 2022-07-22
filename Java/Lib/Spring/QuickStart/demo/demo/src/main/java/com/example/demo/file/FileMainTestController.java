@@ -5,13 +5,56 @@
  *****************************************************************************/
 package com.example.demo.file;
 
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.List;
+
 /**
  * @author liangbo
  * @version V1.0
- * @Title: FileMainTest.java
+ * @Title: FileMainTestController.java
  * @Package com.example.demo.file
  * @Description
  * @date 2022 06-23 15:13.
  */
-public class FileMainTest {
+@RestController
+@Slf4j
+@RequestMapping(value = "file")
+public class FileMainTestController {
+    /**
+     * 基础的文件读写测试
+     * Java io提供的Path和Files来实现
+     * 涉及
+     * - 文件系统（Windows，Linux，Zip）
+     * - 绝对路径，相对路径
+     *
+     * @return {@link String}
+     * @throws IOException ioexception
+     */
+    @RequestMapping(value = "")
+    public String test() throws IOException {
+        Path path = Paths.get("D:\\Projects\\Others\\Mine\\learning_log\\Java\\Lib\\Spring\\QuickStart\\demo\\demo\\src\\main\\java\\com\\example\\demo\\file\\test.txt");
+        List<String> contents = Files.readAllLines(path);
+        return "success";
+    }
+
+    /**
+     * 测试类路径
+     *
+     * @return {@link String}
+     * @throws IOException ioexception
+     */
+    @RequestMapping(value = "")
+    public String testClassPath() throws IOException {
+        PathMatchingResourcePatternResolver
+//        ClassPathResource
+        return "success";
+    }
 }

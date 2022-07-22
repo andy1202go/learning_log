@@ -1,31 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6172b00e-3a9d-4d4b-abef-cf2b958230de" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/shithappens/libs/entities/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Lib/Spring/QuickStart/demo/demo/src/main/java/com/example/demo/validation/GlobalAPIExceptionHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Lib/Spring/QuickStart/demo/demo/src/main/java/com/example/demo/validation/PrimeValidator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Lib/Spring/QuickStart/demo/demo/src/main/java/com/example/demo/validation/ValidationTestController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Lib/Spring/QuickStart/demo/demo/src/main/java/com/example/demo/validation/entities/DeeperObject.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Lib/Spring/QuickStart/demo/demo/src/main/java/com/example/demo/validation/entities/PrimeValidateAnnotation.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Lib/Spring/QuickStart/demo/demo/src/main/java/com/example/demo/validation/entities/ValidationGroups.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Lib/Spring/QuickStart/demo/demo/src/main/java/com/example/demo/validation/entities/ValidationList.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Lib/Spring/QuickStart/demo/demo/src/main/java/com/example/demo/validation/entities/ValidationObject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/4/043bb364c365b47cbe9f567c2ba519b4092c4b7e" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/4/043bb364c365b47cbe9f567c2ba519b4092c4b7e" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/b/1b00099320577e25d4eccd62cd6d95a66066447d" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/b/1b00099320577e25d4eccd62cd6d95a66066447d" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/3/63591a3915c95529c0c6c9212a1c8f0a365afc94" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/3/63591a3915c95529c0c6c9212a1c8f0a365afc94" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/9/e9fe4def5f9d763814dc3e66c9c65edc9038e561" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/9/e9fe4def5f9d763814dc3e66c9c65edc9038e561" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/shithappens/libs/collections/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/shithappens/libs/collections/Test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/shithappens/libs/mapstruct/CarMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/shithappens/libs/mapstruct/CarMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/shithappens/libs/mapstruct/DemoMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/shithappens/libs/mapstruct/DemoMain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/shithappens/libs/mapstruct/entities/CarDO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/shithappens/libs/entities/CarDO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/shithappens/libs/mapstruct/entities/CarDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/shithappens/libs/entities/CarDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/shithappens/libs/regex/TestMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/shithappens/libs/regex/TestMain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/generated-sources/annotations/org/shithappens/libs/mapstruct/CarMapperImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/generated-sources/annotations/org/shithappens/libs/mapstruct/CarMapperImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lib/Spring/QuickStart/demo/demo/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Lib/Spring/QuickStart/demo/demo/pom.xml" afterDir="false" />
-    </list>
+    <list default="true" id="6172b00e-3a9d-4d4b-abef-cf2b958230de" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -63,7 +39,7 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/shithappens/libs/regex/TestMain.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="632">
+            <state relative-caret-position="633">
               <caret line="111" selection-start-line="111" selection-end-line="112" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -401,17 +377,17 @@
       <workItem from="1652671666345" duration="1553000" />
       <workItem from="1652682882679" duration="2503000" />
       <workItem from="1652774283654" duration="1343000" />
+      <workItem from="1655894000800" duration="4000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23825000" />
+    <option name="totallyTimeSpent" value="23829000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-5" y="21" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
+    <frame x="-8" y="32" width="1936" height="1056" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4984127" visible="true" weight="0.2992" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4984127" visible="true" weight="0.3024" />
       <window_info id="Structure" order="1" sideWeight="0.50158733" side_tool="true" weight="0.17226666" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -727,12 +703,12 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider editor-type-id="MavenHelperPluginDependencyAnalyzer" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2900">
           <caret line="145" column="25" selection-start-line="145" selection-start-column="25" selection-end-line="145" selection-end-column="25" />
         </state>
       </provider>
+      <provider editor-type-id="MavenHelperPluginDependencyAnalyzer" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/shithappens/libs/TestingSet.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -780,7 +756,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/shithappens/libs/regex/TestMain.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="632">
+        <state relative-caret-position="633">
           <caret line="111" selection-start-line="111" selection-end-line="112" />
           <folding>
             <element signature="imports" expanded="true" />
