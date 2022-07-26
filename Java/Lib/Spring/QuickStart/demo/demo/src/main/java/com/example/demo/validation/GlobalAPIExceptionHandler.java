@@ -5,12 +5,6 @@
  *****************************************************************************/
 package com.example.demo.validation;
 
-import lombok.extern.slf4j.Slf4j;
-import org.springframework.http.HttpStatus;
-import org.springframework.web.bind.annotation.ControllerAdvice;
-import org.springframework.web.bind.annotation.ExceptionHandler;
-import org.springframework.web.bind.annotation.ResponseStatus;
-
 /**
  * @author liangbo
  * @version V1.0
@@ -19,13 +13,13 @@ import org.springframework.web.bind.annotation.ResponseStatus;
  * @Description ControllerExceptionHandler
  * @date 2022 05-17 15:35.
  */
-@ControllerAdvice
-@Slf4j
-public class GlobalAPIExceptionHandler {
-    @ResponseStatus(HttpStatus.OK)
-    @ExceptionHandler
-    public String handle(Exception e) {
-        log.error("", e);
-        return "error";
-    }
-}
+//@ControllerAdvice
+//@Slf4j
+//public class GlobalAPIExceptionHandler {
+//    @ResponseStatus(HttpStatus.OK)
+//    @ExceptionHandler
+//    public String handle(Exception e) {
+//        log.error("", e);
+//        return "error";
+//    }
+//}

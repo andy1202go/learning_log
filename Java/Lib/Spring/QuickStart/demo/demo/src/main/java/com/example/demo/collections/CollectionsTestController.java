@@ -6,6 +6,7 @@
 package com.example.demo.collections;
 
 import com.alibaba.fastjson.JSON;
+import com.example.demo.general.NotControllerResponseAdvice;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -31,6 +32,7 @@ import java.util.Set;
 public class CollectionsTestController {
 
     @RequestMapping(value = "")
+    @NotControllerResponseAdvice
     public String test() {
         testEmptySet();
         return "success";
@@ -47,6 +49,7 @@ public class CollectionsTestController {
     }
 
     @RequestMapping(value = "/self")
+    @NotControllerResponseAdvice
     public String self() {
         SelfCollection selfCollection = new SelfCollection();
         selfCollection.add("shit");

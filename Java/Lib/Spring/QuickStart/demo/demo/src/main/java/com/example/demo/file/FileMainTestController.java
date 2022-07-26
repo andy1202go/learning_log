@@ -5,8 +5,9 @@
  *****************************************************************************/
 package com.example.demo.file;
 
+import com.example.demo.general.NotControllerResponseAdvice;
+import com.example.demo.general.ResultVo;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -39,10 +40,11 @@ public class FileMainTestController {
      * @throws IOException ioexception
      */
     @RequestMapping(value = "")
-    public String test() throws IOException {
+    @NotControllerResponseAdvice
+    public ResultVo test() throws IOException {
         Path path = Paths.get("D:\\Projects\\Others\\Mine\\learning_log\\Java\\Lib\\Spring\\QuickStart\\demo\\demo\\src\\main\\java\\com\\example\\demo\\file\\test.txt");
         List<String> contents = Files.readAllLines(path);
-        return "success";
+        return new ResultVo("success");
     }
 
     /**
@@ -51,9 +53,9 @@ public class FileMainTestController {
      * @return {@link String}
      * @throws IOException ioexception
      */
-    @RequestMapping(value = "")
+    @RequestMapping(value = "2")
+    @NotControllerResponseAdvice
     public String testClassPath() throws IOException {
-        PathMatchingResourcePatternResolver
 //        ClassPathResource
         return "success";
     }

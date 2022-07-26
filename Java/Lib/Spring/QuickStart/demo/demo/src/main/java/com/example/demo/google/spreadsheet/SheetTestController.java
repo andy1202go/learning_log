@@ -6,6 +6,7 @@
 package com.example.demo.google.spreadsheet;
 
 import com.alibaba.fastjson.JSON;
+import com.example.demo.general.NotControllerResponseAdvice;
 import com.google.api.client.auth.oauth2.Credential;
 import com.google.api.client.googleapis.auth.oauth2.GoogleCredential;
 import com.google.api.client.googleapis.json.GoogleJsonError;
@@ -89,6 +90,7 @@ public class SheetTestController {
     }
 
     @GetMapping("")
+    @NotControllerResponseAdvice
     public String modifyTest() {
 // Build a new authorized API client service.
         NetHttpTransport HTTP_TRANSPORT = new NetHttpTransport.Builder()

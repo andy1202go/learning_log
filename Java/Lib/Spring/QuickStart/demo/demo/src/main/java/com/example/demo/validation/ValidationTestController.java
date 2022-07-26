@@ -5,6 +5,7 @@
  *****************************************************************************/
 package com.example.demo.validation;
 
+import com.example.demo.general.NotControllerResponseAdvice;
 import com.example.demo.validation.entities.ValidationObject;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -40,11 +41,13 @@ public class ValidationTestController {
      * @return
      */
     @PostMapping("post")
+    @NotControllerResponseAdvice
     public String test(@RequestBody @Validated ValidationObject vo){
         return "OK";
     }
 
     @GetMapping("get")
+    @NotControllerResponseAdvice
     public String testget(@Validated ValidationObject vo){
         return "OK";
     }

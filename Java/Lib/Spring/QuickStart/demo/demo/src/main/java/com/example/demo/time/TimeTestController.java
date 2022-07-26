@@ -5,6 +5,7 @@
  *****************************************************************************/
 package com.example.demo.time;
 
+import com.example.demo.general.NotControllerResponseAdvice;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -31,6 +32,7 @@ import java.util.Locale;
 public class TimeTestController {
 
     @RequestMapping(value = "")
+    @NotControllerResponseAdvice
     public String test() {
         englishToRealMonth();
         getNowMonthEnglishDesc();

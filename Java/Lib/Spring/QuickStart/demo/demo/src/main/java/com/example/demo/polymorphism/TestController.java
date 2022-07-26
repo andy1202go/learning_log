@@ -5,6 +5,7 @@
  *****************************************************************************/
 package com.example.demo.polymorphism;
 
+import com.example.demo.general.NotControllerResponseAdvice;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;
@@ -36,6 +37,7 @@ public class TestController implements ApplicationContextAware {
     }
 
     @RequestMapping(value = "")
+    @NotControllerResponseAdvice
     public String doSyncGrab() {
         return getService("One").getSth();
     }

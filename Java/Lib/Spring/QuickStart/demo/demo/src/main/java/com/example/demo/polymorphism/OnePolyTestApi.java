@@ -5,6 +5,7 @@
  *****************************************************************************/
 package com.example.demo.polymorphism;
 
+import com.example.demo.general.NotControllerResponseAdvice;
 import org.springframework.stereotype.Service;
 
 /**
@@ -18,6 +19,7 @@ import org.springframework.stereotype.Service;
 @Service("OnePolyTestApi")
 public class OnePolyTestApi implements PolyTestApi{
     @Override
+    @NotControllerResponseAdvice
     public String getSth() {
         return "one";
     }
