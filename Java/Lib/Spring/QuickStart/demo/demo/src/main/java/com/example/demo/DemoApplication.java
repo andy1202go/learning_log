@@ -2,12 +2,20 @@ package com.example.demo;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.scheduling.annotation.EnableAsync;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+/**
+ * 演示应用程序
+ *
+ * @author 80338398
+ * @date 2022/07/27
+ */
 @SpringBootApplication
 @RestController
+@EnableAsync
 public class DemoApplication {
 
 	public static void main(String[] args) {
