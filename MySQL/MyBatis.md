@@ -4,7 +4,74 @@
 
 ## 参考官方文档
 
+### Mybatis
+
 https://mybatis.org/mybatis-3/zh/index.html
+
+### Mybatis相关的各种project（比如springboot-starter）
+
+https://blog.mybatis.org/p/products.html
+
+### springboot整合mybatis
+
+整合入mybatis http://mybatis.org/spring-boot-starter/mybatis-spring-boot-autoconfigure/
+
+注意，这里的mybatis依赖实现的是下列功能：
+
+> - Autodetect an existing `DataSource`
+> - Will create and register an instance of a `SqlSessionFactory` passing that `DataSource` as an input using the `SqlSessionFactoryBean`
+> - Will create and register an instance of a `SqlSessionTemplate` got out of the `SqlSessionFactory`
+> - Auto-scan your mappers, link them to the `SqlSessionTemplate` and register them to Spring context so they can be injected into your beans
+
+所以，还依赖spring的data能力
+
+https://docs.spring.io/spring-boot/docs/current/reference/html/data.html#data
+
+配置dataSource：https://docs.spring.io/spring-boot/docs/current/reference/html/howto.html#howto.data-access.configure-custom-datasource
+
+dataSource至少包含以下必要配置
+
+- 用户名和密码
+- 数据库url
+- 驱动器（driver class）
+
+选择的dataSource，比如alibaba的druid，就要找对应的springboot-starter
+
+**PS**:比如druid-spring-boot-starter，mybatis-spring-boot-starter就是这种中间件适配spring做的包，spring-boot-starter-web这种，就是spring官方给的。所以找支持文档也是去不同的地方去。
+
+然后mysql又需要引入mysql和java的包；
+
+所以最小情况就是
+
+```xml
+		<dependency>
+			<groupId>org.mybatis.spring.boot</groupId>
+			<artifactId>mybatis-spring-boot-starter</artifactId>
+			<version>2.2.2</version>
+<!--			结合springboot版本选择     -->
+		</dependency>
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>8.0.20</version>
+		</dependency>
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>druid-spring-boot-starter</artifactId>
+			<version>1.1.22</version>
+		</dependency>
+```
+
+然后配置文件要指定dataSource
+
+```properties
+spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+spring.datasource.username=root
+spring.datasource.password=root
+spring.datasource.url=jdbc:mysql://localhost:3306/
+```
+
+整体可以参考https://www.bilibili.com/read/cv6810516/
 
 ### XML映射文件
 
