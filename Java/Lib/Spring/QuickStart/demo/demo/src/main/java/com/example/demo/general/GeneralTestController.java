@@ -31,4 +31,8 @@ public class GeneralTestController {
         return "OK";
     }
 
+    @PostMapping("vo")
+    public ResultVo testVo() {
+        return new ResultVo("OK");
+    }
 }

@@ -1,9 +1,9 @@
 
-P
-java:S1118":Add a private constructor to hide the implicit public one.(ΆΙΊΘ
 :
 java:S2386"Make this member "protected".(ίηÿ§8ΨΤ΄υτ/
 I
 java:S3599",Use another way to initialize this instance.(ίηÿ§8Ν»υτ/
 v
 java:S1171"YMove the contents of this initializer to a standard constructor or to field initializers.(ίηÿ§8Ν»υτ/
+P
+java:S1118":Add a private constructor to hide the implicit public one.(ΆΙΊΘ

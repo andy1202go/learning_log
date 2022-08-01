@@ -25,4 +25,6 @@ public class TestingSet {
         add("\"well\"");
     }};
 
+    public static final long EXPIRE_LONG = 120L;
+
 }
