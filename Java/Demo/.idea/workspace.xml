@@ -2,24 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b96e39e6-004c-47c1-ba42-8bcad2d4d1e4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/shithappens/libs/cache/caffeine/CaffeineCacheExpireStrategies.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/shithappens/libs/cache/caffeine/CaffeineCacheGeneralService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/shithappens/libs/cache/caffeine/CaffeineCacheService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/shithappens/libs/cache/caffeine/CaffeineMoreAbility.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/shithappens/libs/cache/caffeine/缓存淘汰算法说明.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Lib/Spring/QuickStart/demo/demo/src/main/java/com/example/demo/cache/caffeine/CaffeineCacheConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Lib/Spring/QuickStart/demo/demo/src/main/java/com/example/demo/cache/caffeine/CaffeineService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Lib/Spring/QuickStart/demo/demo/src/main/java/com/example/demo/cache/caffeine/CaffeineTestController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Lib/Spring/QuickStart/demo/demo/src/main/java/com/example/demo/general/Constant.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Lib/Spring/QuickStart/demo/demo/src/main/java/com/example/demo/general/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/4/043bb364c365b47cbe9f567c2ba519b4092c4b7e" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/4/043bb364c365b47cbe9f567c2ba519b4092c4b7e" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/shithappens/libs/TestingSet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/shithappens/libs/TestingSet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lib/Spring/QuickStart/demo/demo/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Lib/Spring/QuickStart/demo/demo/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lib/Spring/QuickStart/demo/demo/src/main/java/com/example/demo/DemoApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Lib/Spring/QuickStart/demo/demo/src/main/java/com/example/demo/DemoApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lib/Spring/QuickStart/demo/demo/src/main/java/com/example/demo/general/GeneralTestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Lib/Spring/QuickStart/demo/demo/src/main/java/com/example/demo/general/GeneralTestController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lib/Spring/QuickStart/demo/demo/src/main/java/com/example/demo/general/ResultVo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Lib/Spring/QuickStart/demo/demo/src/main/java/com/example/demo/general/ResultVo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lib/Spring/QuickStart/demo/demo/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../Lib/Spring/QuickStart/demo/demo/src/main/resources/application.properties" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -432,12 +416,12 @@
       <workItem from="1658479274533" duration="2368000" />
       <workItem from="1658716629375" duration="198000" />
       <workItem from="1658716910365" duration="5059000" />
-      <workItem from="1659320276392" duration="6631000" />
+      <workItem from="1659320276392" duration="7230000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="17164000" />
+    <option name="totallyTimeSpent" value="17763000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="32" width="1936" height="1056" extended-state="6" />

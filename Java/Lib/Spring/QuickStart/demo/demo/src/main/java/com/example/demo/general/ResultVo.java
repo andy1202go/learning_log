@@ -53,4 +53,8 @@ public class ResultVo {
         this.msg = statusCode.getMsg();
         this.data = null;
     }
+
+    public static ResultVo success(){
+        return new ResultVo("SUCCESS");
+    }
 }
