@@ -30,7 +30,7 @@ public class FunctionalTestController {
     private BuziService buziService;
 
     @GetMapping("map")
-    public ResultVo test(String param) {
+    public ResultVo<String> test(String param) {
         return buziService.doBusi(param);
     }
 

@@ -18,7 +18,7 @@ import java.io.Serializable;
  * @date 2022 07-26 14:36.
  */
 @Data
-public class ResultVo implements Serializable {
+public class ResultVo<T> implements Serializable {
     private static final long serialVersionUID = -8456345788490416716L;
     // 状态码
     private int code;
@@ -27,26 +27,26 @@ public class ResultVo implements Serializable {
     private String msg;
 
     // 返回对象
-    private Object data;
+    private T data;
 
     private Page page;
 
     // 手动设置返回vo
-    public ResultVo(int code, String msg, Object data) {
+    public ResultVo(int code, String msg, T data) {
         this.code = code;
         this.msg = msg;
         this.data = data;
     }
 
     // 默认返回成功状态码，数据对象
-    public ResultVo(Object data) {
+    public ResultVo(T data) {
         this.code = ResultCode.SUCCESS.getCode();
         this.msg = ResultCode.SUCCESS.getMsg();
         this.data = data;
     }
 
     // 返回指定状态码，数据对象
-    public ResultVo(StatusCode statusCode, Object data) {
+    public ResultVo(StatusCode statusCode, T data) {
         this.code = statusCode.getCode();
         this.msg = statusCode.getMsg();
         this.data = data;
@@ -60,21 +60,21 @@ public class ResultVo implements Serializable {
     }
 
 
-    public ResultVo(Object data, Page page) {
+    public ResultVo(T data, Page page) {
         this.code = ResultCode.SUCCESS.getCode();
         this.msg = ResultCode.SUCCESS.getMsg();
         this.data = data;
         this.page = page;
     }
 
-    public ResultVo(Object data, int currentPage, int totalRecord, int pageSize) {
+    public ResultVo(T data, int currentPage, int totalRecord, int pageSize) {
         this.code = ResultCode.SUCCESS.getCode();
         this.msg = ResultCode.SUCCESS.getMsg();
         this.data = data;
         this.page = new Page(currentPage, totalRecord, pageSize);
     }
 
-    public static ResultVo success() {
+    public static ResultVo<String> success() {
         return new ResultVo("SUCCESS");
     }
 }

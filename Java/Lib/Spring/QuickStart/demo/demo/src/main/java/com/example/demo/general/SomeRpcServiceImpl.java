@@ -18,12 +18,12 @@ import org.springframework.stereotype.Service;
 @Service
 public class SomeRpcServiceImpl implements RpcService {
     @Override
-    public ResultVo queryByStringParam(String param) {
+    public ResultVo<String> queryByStringParam(String param) {
         return new ResultVo("queryByStringParam success " + param);
     }
 
     @Override
-    public ResultVo doSomething(String param) {
+    public ResultVo<String> doSomething(String param) {
         return new ResultVo("doSomething success " + param);
     }
 }

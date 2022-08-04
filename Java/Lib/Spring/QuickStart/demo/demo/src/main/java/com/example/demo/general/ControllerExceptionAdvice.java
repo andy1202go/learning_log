@@ -23,14 +23,14 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 @Slf4j
 public class ControllerExceptionAdvice {
     @ExceptionHandler({BindException.class})
-    public ResultVo methodArgumentNotValidExceptionHandler(BindException be) {
+    public ResultVo<String> methodArgumentNotValidExceptionHandler(BindException be) {
         // 从异常对象中拿到ObjectError对象
         ObjectError objectError = be.getBindingResult().getAllErrors().get(0);
         return new ResultVo(ResultCode.VALIDATE_ERROR, objectError.getDefaultMessage());
     }
 
     @ExceptionHandler(APIException.class)
-    public ResultVo APIExceptionHandler(APIException e) {
+    public ResultVo<String> APIExceptionHandler(APIException e) {
          log.error(e.getMessage(), e);
         return new ResultVo(e.getCode(), e.getMsg(), e.getMessage());
     }

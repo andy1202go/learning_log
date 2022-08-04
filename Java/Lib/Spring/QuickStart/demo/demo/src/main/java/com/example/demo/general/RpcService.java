@@ -14,7 +14,7 @@ package com.example.demo.general;
  * @date 2022 07-29 16:46.
  */
 public interface RpcService {
-    ResultVo queryByStringParam(String param);
+    ResultVo<String> queryByStringParam(String param);
 
-    ResultVo doSomething(String param);
+    ResultVo<String> doSomething(String param);
 }

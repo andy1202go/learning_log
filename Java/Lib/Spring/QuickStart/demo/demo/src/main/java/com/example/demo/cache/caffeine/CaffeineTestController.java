@@ -6,6 +6,7 @@
 package com.example.demo.cache.caffeine;
 
 import com.example.demo.general.ResultVo;
+import com.example.demo.general.User;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -29,12 +30,12 @@ public class CaffeineTestController {
     private CaffeineService caffeineService;
 
     @RequestMapping("")
-    public ResultVo testVo(Long id) {
+    public ResultVo<User> testVo(Long id) {
         return new ResultVo(caffeineService.getUser(null == id ? USER_ID : id));
     }
 
     @RequestMapping("te")
-    public ResultVo testExpire(Long id) throws InterruptedException {
+    public ResultVo<User> testExpire(Long id) throws InterruptedException {
         caffeineService.getUser(null == id ? USER_ID : id);
         Thread.sleep(120*1000);
         return new ResultVo(caffeineService.getUser(null == id ? USER_ID : id));

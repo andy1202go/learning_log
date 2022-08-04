@@ -41,7 +41,7 @@ public class FileMainTestController {
      */
     @RequestMapping(value = "")
     @NotControllerResponseAdvice
-    public ResultVo test() throws IOException {
+    public ResultVo<String> test() throws IOException {
         Path path = Paths.get("D:\\Projects\\Others\\Mine\\learning_log\\Java\\Lib\\Spring\\QuickStart\\demo\\demo\\src\\main\\java\\com\\example\\demo\\file\\test.txt");
         List<String> contents = Files.readAllLines(path);
         return new ResultVo("success");

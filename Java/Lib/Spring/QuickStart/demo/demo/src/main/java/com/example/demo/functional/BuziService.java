@@ -34,7 +34,7 @@ public class BuziService {
      * Map<String, Function<String, ResultVo>>
      * 也是某种设计模式的实现了
      */
-    private Map<String, Function<String, ResultVo>> buziMap = new HashMap<>();
+    private Map<String, Function<String, ResultVo<String>>> buziMap = new HashMap<>();
 
     @PostConstruct
     private void initMap() {
@@ -42,7 +42,7 @@ public class BuziService {
         buziMap.put("query", param -> someRpcService.queryByStringParam(param));
     }
 
-    public ResultVo doBusi(String param) {
+    public ResultVo<String> doBusi(String param) {
         return Optional.ofNullable(buziMap.get(param)).map(f -> f.apply(param)).orElseThrow(() -> new APIException("no this command"));
     }
 }
