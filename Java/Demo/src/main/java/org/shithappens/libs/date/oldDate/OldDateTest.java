@@ -3,7 +3,7 @@
  * All Rights Reserved.
  * 本软件为深圳万普拉斯科技有限公司开发研制。未经本公司正式书面同意，其他任何个人、团体不得使用、复制、修改或发布本软件.
  *****************************************************************************/
-package org.shithappens.libs.oldDate;
+package org.shithappens.libs.date.oldDate;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -14,7 +14,7 @@ import java.util.logging.Logger;
  * @author liangbo
  * @version V1.0
  * @Title: OldDateTest.java
- * @Package org.shithappens.libs.oldDate
+ * @Package org.shithappens.libs.date.oldDate
  * @Description 日期-旧情况test
  * @date 2022 03-09 16:36.
  */

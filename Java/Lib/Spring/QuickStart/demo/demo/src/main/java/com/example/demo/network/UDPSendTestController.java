@@ -38,12 +38,12 @@ public class UDPSendTestController {
     }
 
     @GetMapping("udp")
-    public ResultVo<String> testVo(String host) throws Exception {
-        DatagramSocket datagramSocket = new DatagramSocket(); // 创建DatagramSocket
-        DatagramPacket datagramPacket = new DatagramPacket(host.getBytes(),
-                host.getBytes().length, InetAddress.getByName("127.0.0.1"), 8888); // 创建DatagramPacket（要发送的数据，数据的长度，Ip地址，端口）
-        datagramSocket.send(datagramPacket); // 发送
-        datagramSocket.close(); // 关闭
+    public ResultVo<String> dnsServer(String host) throws Exception {
+        try (DatagramSocket datagramSocket = new DatagramSocket()) {
+            DatagramPacket datagramPacket = new DatagramPacket(host.getBytes(),
+                    host.getBytes().length, InetAddress.getByName("127.0.0.1"), 8888);
+            datagramSocket.send(datagramPacket);
+        }
         return new ResultVo("Send OK");
     }
 }

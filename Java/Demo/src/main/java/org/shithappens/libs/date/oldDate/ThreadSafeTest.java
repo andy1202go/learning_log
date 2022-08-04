@@ -1,4 +1,4 @@
-package org.shithappens.libs.oldDate;
+package org.shithappens.libs.date.oldDate;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
