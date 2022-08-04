@@ -7,6 +7,8 @@ package com.example.demo.general;
 
 import lombok.Data;
 
+import java.io.Serializable;
+
 /**
  * @author liangbo
  * @version V1.0
@@ -16,7 +18,8 @@ import lombok.Data;
  * @date 2022 07-26 14:36.
  */
 @Data
-public class ResultVo {
+public class ResultVo implements Serializable {
+    private static final long serialVersionUID = -8456345788490416716L;
     // 状态码
     private int code;
 
@@ -25,6 +28,8 @@ public class ResultVo {
 
     // 返回对象
     private Object data;
+
+    private Page page;
 
     // 手动设置返回vo
     public ResultVo(int code, String msg, Object data) {
@@ -54,7 +59,22 @@ public class ResultVo {
         this.data = null;
     }
 
-    public static ResultVo success(){
+
+    public ResultVo(Object data, Page page) {
+        this.code = ResultCode.SUCCESS.getCode();
+        this.msg = ResultCode.SUCCESS.getMsg();
+        this.data = data;
+        this.page = page;
+    }
+
+    public ResultVo(Object data, int currentPage, int totalRecord, int pageSize) {
+        this.code = ResultCode.SUCCESS.getCode();
+        this.msg = ResultCode.SUCCESS.getMsg();
+        this.data = data;
+        this.page = new Page(currentPage, totalRecord, pageSize);
+    }
+
+    public static ResultVo success() {
         return new ResultVo("SUCCESS");
     }
 }

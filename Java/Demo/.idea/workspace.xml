@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b96e39e6-004c-47c1-ba42-8bcad2d4d1e4" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../Lib/Spring/QuickStart/demo/demo/src/main/java/com/example/demo/general/Page.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Lib/Spring/QuickStart/demo/demo/src/main/java/com/example/demo/general/ResultVo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Lib/Spring/QuickStart/demo/demo/src/main/java/com/example/demo/general/ResultVo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lib/Spring/QuickStart/demo/demo/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../Lib/Spring/QuickStart/demo/demo/src/main/resources/application.properties" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
