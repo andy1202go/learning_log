@@ -1,28 +1,28 @@
 
-Y
-java:S1854."<Remove this useless assignment to local variable "redisKey".(Ñø¢…8Ş¼Ûß„0
-D
-java:S14818"'Remove this unused "co" local variable.(¸Úó8ëû®„0
-K
-java:S14813")Remove this unused "list" local variable.(‘ØÎ€üÿÿÿÿ8Ø«¡à„0
-b	java:S112;"FDefine and throw a dedicated exception instead of using a generic one.(ßÇå“8ÔÚ®„0
-~
-java:S2629]"\Invoke method(s) only conditionally. Use the built-in formatting to construct this argument.(¡³®üøÿÿÿÿ8´êÎõô/
-~
-java:S2629\"\Invoke method(s) only conditionally. Use the built-in formatting to construct this argument.(ö¿•Úüÿÿÿÿ8´êÎõô/
-U	java:S106A"9Replace this use of System.out or System.err by a logger.(¨ñ¿”8äóœ®„0
 Z
 java:S18543"8Remove this useless assignment to local variable "list".(‘ØÎ€üÿÿÿÿ8Ø«¡à„0
+~
+java:S2629\"\Invoke method(s) only conditionally. Use the built-in formatting to construct this argument.(ö¿•Úüÿÿÿÿ8´êÎõô/
+g	java:S112H"FDefine and throw a dedicated exception instead of using a generic one.(¶¶Ÿşÿÿÿÿ8—ÍÚß„0
 j
 java:S5669["MCast this argument to 'Object' to pass a single element to the vararg method.(µùÍ„8äóœ®„0
 J
 java:S1481."-Remove this unused "redisKey" local variable.(Ñø¢…8Ş¼Ûß„0
-g	java:S112H"FDefine and throw a dedicated exception instead of using a generic one.(¶¶Ÿşÿÿÿÿ8—ÍÚß„0
-y
-java:S2629["\Invoke method(s) only conditionally. Use the built-in formatting to construct this argument.(µùÍ„8¨øÀõô/
+U	java:S106A"9Replace this use of System.out or System.err by a logger.(¨ñ¿”8äóœ®„0
 ~
 java:S2629_"\Invoke method(s) only conditionally. Use the built-in formatting to construct this argument.(×½×Âüÿÿÿÿ8äóœ®„0
+~
+java:S2629]"\Invoke method(s) only conditionally. Use the built-in formatting to construct this argument.(¡³®üøÿÿÿÿ8´êÎõô/
+D
+java:S14818"'Remove this unused "co" local variable.(¸Úó8ëû®„0
+y
+java:S2629["\Invoke method(s) only conditionally. Use the built-in formatting to construct this argument.(µùÍ„8¨øÀõô/
+b	java:S112;"FDefine and throw a dedicated exception instead of using a generic one.(ßÇå“8ÔÚ®„0
+Y
+java:S1854."<Remove this useless assignment to local variable "redisKey".(Ñø¢…8Ş¼Ûß„0
 S
 java:S18548"6Remove this useless assignment to local variable "co".(¸Úó8ëû®„0
+K
+java:S14813")Remove this unused "list" local variable.(‘ØÎ€üÿÿÿÿ8Ø«¡à„0
 ~
 java:S2629^"\Invoke method(s) only conditionally. Use the built-in formatting to construct this argument.(¦¨×øşÿÿÿÿ8´êÎõô/
