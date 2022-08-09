@@ -6,10 +6,14 @@
 package com.example.demo.general;
 
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.http.HttpStatus;
 import org.springframework.validation.BindException;
 import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
+import org.springframework.web.context.request.async.AsyncRequestTimeoutException;
 
 /**
  * @author liangbo
@@ -26,12 +30,20 @@ public class ControllerExceptionAdvice {
     public ResultVo<String> methodArgumentNotValidExceptionHandler(BindException be) {
         // 从异常对象中拿到ObjectError对象
         ObjectError objectError = be.getBindingResult().getAllErrors().get(0);
-        return new ResultVo(ResultCode.VALIDATE_ERROR, objectError.getDefaultMessage());
+        return new ResultVo<>(ResultCode.VALIDATE_ERROR, objectError.getDefaultMessage());
     }
 
     @ExceptionHandler(APIException.class)
     public ResultVo<String> APIExceptionHandler(APIException e) {
          log.error(e.getMessage(), e);
-        return new ResultVo(e.getCode(), e.getMsg(), e.getMessage());
+        return new ResultVo<>(e.getCode(), e.getMsg(), e.getMessage());
+    }
+
+    @ResponseStatus(HttpStatus.NOT_MODIFIED)
+    @ResponseBody
+    @ExceptionHandler(AsyncRequestTimeoutException.class)
+    public ResultVo asyncRequestTimeoutHandler(AsyncRequestTimeoutException e) {
+        log.error("异步请求超时");
+        return new ResultVo<>(ResultCode.ASYNC_TIME_OUT);
     }
 }

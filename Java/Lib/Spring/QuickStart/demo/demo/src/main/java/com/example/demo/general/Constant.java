@@ -15,4 +15,6 @@ package com.example.demo.general;
  */
 public class Constant {
     public static long USER_ID = 123L;
+    public static long TIME_OUT_MILLI = 10000L;
+
 }
