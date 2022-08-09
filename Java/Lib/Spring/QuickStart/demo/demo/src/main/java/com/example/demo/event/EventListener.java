@@ -26,6 +26,13 @@ public class EventListener {
         log.info("[syncListener] msg is {}", syncEvent.getMsg());
     }
 
+    /**
+     * 异步事件处理
+     * PS.异步可以使用@Async注解，但要了解其使用方法：配置+value含义+返回值处理；
+     *      深入理解其原理，掌握开线程池做异步
+     *      https://mp.weixin.qq.com/s/SdxnKw94H6V_UBD9oe6DGQ 
+     * @param asyncEvent
+     */
     @org.springframework.context.event.EventListener(AsyncEvent.class)
     @Async
     public void asyncListener(AsyncEvent asyncEvent) {
