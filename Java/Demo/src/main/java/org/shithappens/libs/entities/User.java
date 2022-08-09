@@ -5,6 +5,8 @@
  *****************************************************************************/
 package org.shithappens.libs.entities;
 
+import java.io.Serializable;
+
 /**
  * @author liangbo
  * @version V1.0
@@ -13,10 +15,13 @@ package org.shithappens.libs.entities;
  * @Description 用户测试
  * @date 2022 05-16 14:27.
  */
-public class User {
+public class User implements Serializable {
+    private static final long serialVersionUID = -2871379459600571216L;
     private String name;
     private int age;
     private Integer bigAge;
+    private transient String sex;
+    private static String signature = "你眼中的世界就是你自己的样子";
 
     public User() {
     }
@@ -25,6 +30,14 @@ public class User {
         this.name = name;
         this.age = age;
         this.bigAge = bigAge;
+    }
+
+    public static String getSignature() {
+        return signature;
+    }
+
+    public void setSignature(String signature) {
+        User.signature = signature;
     }
 
     public String getName() {
@@ -49,5 +62,23 @@ public class User {
 
     public void setBigAge(Integer bigAge) {
         this.bigAge = bigAge;
+    }
+
+    public String getSex() {
+        return sex;
+    }
+
+    public void setSex(String sex) {
+        this.sex = sex;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "name='" + name + '\'' +
+                ", age=" + age +
+                ", sex='" + sex + '\'' +
+                ", sign='" + signature + '\'' +
+                '}';
     }
 }

@@ -26,5 +26,7 @@ public class TestingSet {
     }};
 
     public static final long EXPIRE_LONG = 120L;
+    public static final int SMALL_INT=10;
+    public static final int BIG_INT=100000;
 
 }

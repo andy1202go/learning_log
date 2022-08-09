@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.logging.Logger;
 
 public class Test {
-    static Logger log = Logger.getLogger("Test");
+    static Logger log = Logger.getLogger("SerializableTest");
 
 
     public static void main(String[] args) {
@@ -43,7 +43,7 @@ public class Test {
          *         sort test
          */
 
-        log.info("List sort Test begin!!!");
+        log.info("List sort SerializableTest begin!!!");
 
         List<User> users = new ArrayList<User>() {{
             add(new User("a", 1, 1));
