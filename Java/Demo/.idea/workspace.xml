@@ -2,17 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b96e39e6-004c-47c1-ba42-8bcad2d4d1e4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../Lib/Spring/QuickStart/demo/demo/src/main/java/com/example/demo/business/realtime/message/push/Introduce.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Lib/Spring/QuickStart/demo/demo/src/main/java/com/example/demo/business/realtime/message/push/PollingTestController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Lib/Spring/QuickStart/demo/demo/src/main/java/com/example/demo/business/realtime/message/push/SseController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Lib/Spring/QuickStart/demo/demo/src/main/java/com/example/demo/business/realtime/message/push/SseEmitterUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Lib/Spring/QuickStart/demo/demo/src/main/java/com/example/demo/business/realtime/message/push/WebSocketConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Lib/Spring/QuickStart/demo/demo/src/main/java/com/example/demo/business/realtime/message/push/WebSocketServer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lib/Spring/QuickStart/demo/demo/src/main/java/com/example/demo/business/interfaces/idempotency/TokenController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lib/Spring/QuickStart/demo/demo/src/main/java/com/example/demo/business/interfaces/idempotency/TokenUtilService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lib/Spring/QuickStart/demo/demo/src/main/java/com/example/demo/business/interfaces/idempotency/readme.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Lib/Spring/QuickStart/demo/demo/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Lib/Spring/QuickStart/demo/demo/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lib/Spring/QuickStart/demo/demo/src/main/java/com/example/demo/general/Constant.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Lib/Spring/QuickStart/demo/demo/src/main/java/com/example/demo/general/Constant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lib/Spring/QuickStart/demo/demo/src/main/java/com/example/demo/general/ControllerExceptionAdvice.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Lib/Spring/QuickStart/demo/demo/src/main/java/com/example/demo/general/ControllerExceptionAdvice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lib/Spring/QuickStart/demo/demo/src/main/java/com/example/demo/general/ResultCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Lib/Spring/QuickStart/demo/demo/src/main/java/com/example/demo/general/ResultCode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lib/Spring/QuickStart/demo/demo/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../Lib/Spring/QuickStart/demo/demo/src/main/resources/application.properties" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -39,10 +34,10 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/shithappens/libs/serialization/SerializableTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="369">
+            <state relative-caret-position="532">
               <caret line="102" column="5" selection-start-line="102" selection-start-column="5" selection-end-line="102" selection-end-column="5" />
               <folding>
                 <element signature="class#Hi#0;class#Test#0" />
@@ -51,11 +46,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/shithappens/libs/performance/ForPermomanceTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="580">
-              <caret line="33" column="5" selection-start-line="33" selection-start-column="5" selection-end-line="33" selection-end-column="5" />
+            <state relative-caret-position="460">
+              <caret line="27" column="48" lean-forward="true" selection-start-line="27" selection-start-column="48" selection-end-line="27" selection-end-column="48" />
             </state>
           </provider>
         </entry>
@@ -165,7 +160,7 @@
       </MavenImportingSettings>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-12" />
     <option name="y" value="48" />
     <option name="width" value="984" />
@@ -242,7 +237,7 @@
               <item name="org" type="462c0819:PsiDirectoryNode" />
               <item name="shithappens" type="462c0819:PsiDirectoryNode" />
               <item name="libs" type="462c0819:PsiDirectoryNode" />
-              <item name="performance" type="462c0819:PsiDirectoryNode" />
+              <item name="business" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -376,18 +371,18 @@
       <workItem from="1658716629375" duration="198000" />
       <workItem from="1658716910365" duration="5059000" />
       <workItem from="1659320276392" duration="15444000" />
-      <workItem from="1659944829681" duration="5922000" />
+      <workItem from="1659944829681" duration="6677000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="31899000" />
+    <option name="totallyTimeSpent" value="32654000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="32" width="1936" height="1056" extended-state="7" />
+    <frame x="-8" y="32" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49819493" visible="true" weight="0.2032" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49819493" visible="true" weight="0.2032" />
       <window_info id="Structure" order="1" sideWeight="0.50180507" side_tool="true" weight="0.26026666" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -892,16 +887,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/shithappens/libs/serialization/SerializableTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="369">
-          <caret line="102" column="5" selection-start-line="102" selection-start-column="5" selection-end-line="102" selection-end-column="5" />
-          <folding>
-            <element signature="class#Hi#0;class#Test#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/shithappens/libs/TestingSet.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="428">
@@ -911,8 +896,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/shithappens/libs/performance/ForPermomanceTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="580">
-          <caret line="33" column="5" selection-start-line="33" selection-start-column="5" selection-end-line="33" selection-end-column="5" />
+        <state relative-caret-position="460">
+          <caret line="27" column="48" lean-forward="true" selection-start-line="27" selection-start-column="48" selection-end-line="27" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/shithappens/libs/serialization/SerializableTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="532">
+          <caret line="102" column="5" selection-start-line="102" selection-start-column="5" selection-end-line="102" selection-end-column="5" />
+          <folding>
+            <element signature="class#Hi#0;class#Test#0" />
+          </folding>
         </state>
       </provider>
     </entry>
