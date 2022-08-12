@@ -20,7 +20,7 @@ import java.net.InetAddress;
 
 
 /**
- * 一般测试控制器
+ * UDP测试Controller
  *
  * @author 80338398
  * @date 2022/07/27
@@ -37,6 +37,14 @@ public class UDPSendTestController {
         return "OK";
     }
 
+    /**
+     * dns服务测试，查看某个host解析出来的ip地址是多少
+     * 服务端在java-demo
+     * 使用了Java自带的DatagramSocket，基于UDP协议的通信方式
+     * @param host
+     * @return
+     * @throws Exception
+     */
     @GetMapping("udp")
     public ResultVo<String> dnsServer(String host) throws Exception {
         try (DatagramSocket datagramSocket = new DatagramSocket()) {
